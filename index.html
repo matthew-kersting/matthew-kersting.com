@@ -1,208 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Matthew Kersting</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
+  <meta charset="UTF-8">
+  <title>Matthew Kersting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="w3-light-grey">
+<body>
 
-<!-- Links (sit on top) -->
-<div class="w3-margin-bottom">
-  <div class="w3-row w3-large w3-teal">
-    <div class="w3-right w3-hide-small">
-      <a href="./index.html" class="w3-bar-item w3-button">HOME</a>
-      <a href="./html/research.html" class="w3-bar-item w3-button">RESEARCH</a>
-      <a href="./html/blog/blog.html" class="w3-bar-item w3-button">BLOG</a>
-      <a href="./pdfs/matthew-kersting-resume.pdf" class="w3-bar-item w3-button">RESUME</a>
+<!-- ========================= -->
+<!--   TOP TERMINAL NAV BAR   -->
+<!-- ========================= -->
+<div class="terminal-nav">
+  <div class="nav-buttons">
+    <span class="btn red"></span>
+    <span class="btn yellow"></span>
+    <span class="btn green"></span>
+  </div>
+
+  <div class="nav-links">
+    <a href="./index.html">HOME</a>
+    <span class="divider">|</span>
+    <a href="./html/research.html">RESEARCH</a>
+    <span class="divider">|</span>
+    <a href="./html/blog/blog.html">BLOG</a>
+    <span class="divider">|</span>
+    <a href="./pdfs/matthew-kersting-resume.pdf">RESUME</a>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!--     TERMINAL WINDOW      -->
+<!-- ========================= -->
+<div class="terminal-window">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="title">~/home</span>
+  </div>
+
+  <div class="terminal-content">
+
+    <div class="flex-container">
+
+      <!-- ========================= -->
+      <!--    LEFT COLUMN (PROFILE)  -->
+      <!-- ========================= -->
+      <div class="left-column">
+
+        <h2>&gt; Matthew Kersting</h2>
+        <img src="./images/avatar.jpg" class="avatar" alt="Avatar">
+
+        <div class="ascii-line"></div>
+
+        <p><b>Occupation:</b> Machine Learning Engineer</p>
+        <p><b>Location:</b> South Eastern United States</p>
+        <p><b>Email:</b> <a href="mailto:matthew.kersting@pm.me">matthew.kersting@pm.me</a></p>
+
+        <div class="ascii-line"></div>
+
+        <h3>== Skills ==</h3>
+        <ul>
+          <li>AI Integration</li>
+          <li>Large-scale ML Training</li>
+          <li>Full-Stack Development</li>
+          <li>Distributed Systems</li>
+          <li>Data Engineering</li>
+          <li>ML Research</li>
+        </ul>
+
+        <div class="ascii-line"></div>
+
+        <h3>== Programming Languages ==</h3>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>SQL</li>
+          <li>Go</li>
+          <li>C++</li>
+        </ul>
+
+        <div class="ascii-line"></div>
+
+        <h3>== Tools ==</h3>
+        <ul>
+          <li>Pytorch</li>
+          <li>Express.js</li>
+          <li>FastAPI</li>
+          <li>Springboot</li>
+          <li>PostgreSQL</li>
+          <li>Git</li>
+          <li>Elasticsearch</li>
+          <li>Kafka</li>
+          <li>Spark</li>
+          <li>AWS</li>
+          <li>AWS EMR</li>
+          <li>Ray</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Jenkins</li>
+          <li>Github Actions</li>
+        </ul>
+
+      </div>
+
+      <!-- ========================= -->
+      <!--    RIGHT COLUMN           -->
+      <!-- ========================= -->
+      <div class="right-column">
+
+        <!-- ABOUT -->
+        <h2>== About ==</h2>
+        <p>Greetings! I'm a machine learning engineer and applied mathematics graduate student with an interest for all things tech. Most of my professional work has been developing web apps that deploy ML services, but I have also done UI design, CI/CD work and Data Engineering.</p>
+
+        <p>My current focus on scaling large ML modeling training pipelines. I use tools like Ray and Spark and build training pipelines on AWS to help detect all the bad things that bad people are trying to do to your computer.</p>
+
+        <p>My interests span the tech world. I try to keep track of a number of areas that I think could have big implications or are simply neat, such as neuromorphic computing, distributed systems research and homomorphic encryption (and AI of course, which is somewhat mainstream these days).</p>
+
+        <p>Feel free to shoot me an email if you want to chat! I always enjoy hearing from random people on the other side of the internet.</p>
+
+        <div class="ascii-line"></div>
+
+        <!-- WORK EXPERIENCE -->
+        <h2>== Work Experience ==</h2>
+
+        <h3>Machine Learning Engineer III — Crowdstrike</h3>
+        <p><i>Apr 2025 – Current</i></p>
+        <p>- Developed and maintained large scale ML model training pipelines</p>
+
+        <hr class="ascii">
+
+        <h3>Staff Machine Learning Engineer — Booz Allen Hamilton</h3>
+        <p><i>Jan 2024 – Apr 2025</i></p>
+        <p>- Performed as a Data Engineer for a prominent Enterprise data platform, utilized web scraping tools to gather documents, extract metadata, and organize data within AWS with automated jobs</p>
+        <p>- Developed a full-stack document management solution deployed via Kubernetes, including backend/frontend development, web server optimization, testing enhancements, and database architecture</p>
+        <p>- Implemented Security Technical Implementation Guidelines (STIGs) to ensure compliance and help facilitate the attainment of Authority to Operate (ATO)</p>
+
+        <hr class="ascii">
+
+        <h3>Software Engineer, Machine Learning — Noblis</h3>
+        <p><i>Jan 2021 – Dec 2023</i></p>
+        <p>- Tech-lead for an R&D project providing computer-vision capabilities to aid child exploitation investigations</p>
+        <p>- Engineered a secure and scalable Spring Boot web application which brings to production a variety of speech technology and machine learning capabilities</p>
+        <p>- Led a research initiative focused on developing a Data Lakehouse solution for Noblis, including management of data infrastructure, ETL pipelines, and the deployment of a large language model internally</p>
+        <p>- Engaged directly with stakeholders and led the development of a microservice web application</p>
+
+        <hr class="ascii">
+
+        <h3>Graduate Research Assistant — USF Medical Engineering</h3>
+        <p><i>Jun 2019 – Dec 2020</i></p>
+        <p>- Performed image segmentation and analysis on biological datasets leading to new principles of neural circuitry</p>
+        <p>- Directed multiple undergraduate researchers</p>
+        <p>- Assisted in course delivery and lecturing</p>
+
+        <hr class="ascii">
+
+        <h3>Undergraduate Research Assistant — WVU Rockefeller Neuroscience Institute</h3>
+        <p><i>Jun 2019 – Dec 2020</i></p>
+        <p>- Analyzed biological image datasets and discovered novel properties of neuronal interactions</p>
+        <p>- Developed Python scripts to automate data collection</p>
+
+        <div class="ascii-line"></div>
+
+        <!-- EDUCATION -->
+        <h2>== Education ==</h2>
+
+        <h3>Johns Hopkins Whiting School of Engineering</h3>
+        <p><i>2024 – Current</i></p>
+        <p>Graduate Certificate in Applied and Computational Mathematics</p>
+
+        <hr class="ascii">
+
+        <h3>University of South Florida</h3>
+        <p><i>2019 – 2020</i></p>
+        <p>Master of Science in Biomedical Engineering</p>
+
+        <hr class="ascii">
+
+        <h3>West Virginia University</h3>
+        <p><i>2015 – 2019</i></p>
+        <p>B.S. in Biology (Neuroscience emphasis)</p>
+
+      </div>
+
     </div>
   </div>
 </div>
 
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-third">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="./images/avatar.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-white">
-            <h2>Matthew Kersting</h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Machine Learning Engineer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Alexandria, VA</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="mailto:matthew.kersting@pm.me">matthew.kersting@pm.me</a></p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+1 304.216.7147</p>
-          <hr>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>AI Integration</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-          </div>
-          <p>Full-Stack Development</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Data Engineering</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-          </div>
-          <p>ML Research</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <hr>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Programming Languages</b></p>
-          <p>Python</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:90%"></div>
-          </div>
-          <p>Javascript</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%"></div>
-          </div>
-          <p>Java</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%"></div>
-          </div>
-          <p>SQL</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%"></div>
-          </div>
-          <p>Go</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:20%"></div>
-          </div>
-          <p>C++</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:10%"></div>
-          </div>
-          <hr>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-wrench fa-fw w3-margin-right w3-text-teal"></i>Tools</b></p>
-          <ul class="w3-list">
-            <li>Pytorch</li>
-            <li>Express.js</li>
-            <li>FastAPI</li>
-            <li>Springboot</li>
-            <li>PostgreSQL</li>
-            <li>Git</li>
-            <li>Elasticsearch</li>
-            <li>Kafka</li>
-            <li>Spark</li>
-            <li>AWS</li>
-            <li>Docker</li>
-            <li>Kubernetes</li>
-            <li>Jenkins</li>
-            <li>Github Actions</li>
-          </ul>
-          <br>
-        </div>
-      </div>
-      <br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-user fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>About</h2>
-        <div class="w3-container">
-          <p>Greetings! I'm a machine learning engineer and applied mathematics graduate student with an interest for all things tech. Most of my professional work has been developing web apps that deploy ML services, but I have also done UI design, CI/CD work and Data Engineering.</p>
-          <p>Currently, I am focused on web scraping and data curation. I use tools like Scrapy and BeautifulSoup to scrape the web and organize data effectively. Then I deploy ETL jobs to make that data readily accessible for end-users.</p>
-          <p>My interests span the tech world. I try to keep track of a number of areas that I think could have big implications or are simply neat, such as neuromorphic computing, distributed systems research and homomorphic encryption (and AI of course, which is somewhat mainstream these days).</p>
-          <p>Feel free to shoot me an email if you want to chat! I always enjoy hearing from random people on the other side of the internet.</p>
-        </div>
-      </div>
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Staff Machine Learning Engineer / Booz Allen Hamilton</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2024 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Performed as a Data Engineer for a prominent Enterprise data platform, utilized web scraping tools to gather documents, extract metadata, and organize data within AWS with automated jobs</p>
-          <p>Developed a full-stack document management solution deployed via Kubernetes, including backend/frontend development, web server optimization, testing enhancements, and database architecture</p>
-          <p>Implemented Security Technical Implementation Guidelines (STIGs) to ensure compliance and help facilitate the attainment of Authority to Operate (ATO)</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Software Engineer, Machine Learning / Noblis</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2021 - Dec 2023</h6>
-          <p>Tech-lead for an R&D project providing computer-vision capabilities to aid child exploitation investigations </p>
-          <p>Engineered a secure and scalable Spring Boot web application which brings to production a variety of speech technology and machine learning capabilities to aid in investigative triage</p>
-          <p>Led a research initiative focused on developing a Data Lakehouse solution for Noblis, including management of data infrastructure, construction of ETL pipelines, and the deployment of a large language model internally</p>
-          <p>Engaged directly with stakeholders, translated feedback into system requirements and helped lead the development of a microservice web application including system design, front-end development, back-end development, data modeling, database design, machine learning model integration and CI/CD integration</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Graduate Research Assistant / Department of Medical Engineering - University of South Florida</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2019 - Dec 2020</h6>
-          <p>Performed image segmentation and analysis on biological datasets leading to new principles of neural circuitry</p>
-          <p>Directed multiple undergraduate researchers as they participated in the lab for summer internships and undergraduate theses</p>
-          <p>Assisted in course delivery, including giving lectures on machine learning in neuroscience and tutoring students</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Undergraduate Research Assistant / Rockefeller Neuroscience Institute - West Virginia University</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2019 - Dec 2020</h6>
-          <p>Analyzed and quantified large biological image datasets and discovered novel properties of neuronal interactions</p>
-          <p>Developed Python scripts to automate data collection processes</p>
-        </div>
-      </div>
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Johns Hopkins Whiting School of Engineering</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2024 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Graduate Certificate in Applied and Computational Mathematics</p>
-          <p>Coursework: Statistical Methods and Data Analysis</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>University of South Florida</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2019 - 2020</h6>
-          <p>Master of Science in Biomedical Engineering</p>
-          <p>Coursework: Digital Image Processing, Intro to Algorithms, Engineering Physiology, & Medical Imaging</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>West Virginia University</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015 - 2019</h6>
-          <p>Bachelor of Science in Biology with an Emphasis in Neuroscience</p>
-          <p>Coursework: Python for Data Science, Object-Oriented Programming, Systems Neuroscience, & Molecular Neuroscience</p>
-          <br>
-        </div>
-      </div>
-
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<!-- ========================= -->
+<!--          FOOTER          -->
+<!-- ========================= -->
+<footer class="footer">
   <p>Other places you can find me on the web</p>
-  <a href="https://github.com/matthew-kersting"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://github.com/matthew-kersting">GitHub</a> |
+  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
 </footer>
 
 </body>
