@@ -1,113 +1,226 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Matthew Kersting</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../../../../../css/custom.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
+<title>Compound AI Systems — Blog Post</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../../../../css/style.css">
 </head>
-<body class="w3-light-grey">
+<body>
 
-<!-- Links (sit on top) -->
-<div class="w3-margin-bottom">
-    <div class="w3-row w3-large w3-teal">
-      <div class="w3-right w3-hide-small">
-        <a href="../../../../../index.html" class="w3-bar-item w3-button">HOME</a>
-        <a href="../../../../../html/research.html" class="w3-bar-item w3-button">RESEARCH</a>
-        <a href="../../../../../html/blog/blog.html" class="w3-bar-item w3-button">BLOG</a>
-        <a href="../../../../../pdfs/matthew-kersting-resume.pdf" class="w3-bar-item w3-button">RESUME</a>
-      </div>
-    </div>
+<!-- ========================= -->
+<!--   TOP TERMINAL NAV BAR   -->
+<!-- ========================= -->
+<div class="terminal-nav">
+  <div class="nav-buttons">
+    <span class="btn red"></span>
+    <span class="btn yellow"></span>
+    <span class="btn green"></span>
+  </div>
+
+  <div class="nav-links">
+    <a href="../../../../../index.html">HOME</a>
+    <span class="divider">|</span>
+    <a href="../../../../../html/research.html">RESEARCH</a>
+    <span class="divider">|</span>
+    <a href="../../../../../html/blog/blog.html">BLOG</a>
+    <span class="divider">|</span>
+    <a href="../../../../../pdfs/matthew-kersting-resume.pdf">RESUME</a>
+  </div>
 </div>
 
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-    <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <p>Link: <a href="https://bair.berkeley.edu/blog/2023/02/18/compound-ai-systems/">https://bair.berkeley.edu/blog/2023/02/18/compound-ai-systems/</a></p>
-            <h2 id="citation">Citation</h2>
-            <p>Matei Zaharia, Omar Khattab, Lingjiao Chen, Jared Quincy Davis, Heather Miller, Chris Potts, James Zou, Michael Carbin, Jonathan Frankle, Naveen Rao, and Ali Ghodsi. “The Shift from Models to Compound AI Systems.” February 17, 2024. Accessed June 12, 2024. <a href="https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/">https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/</a></p>            
-            <p>This review was written with the help of ChatGPT</p>
-            <h1 id="summary-of-blog-post">Summary of Blog Post</h1>
-            <h3 id="introduction">Introduction:</h3>
-            <p>In 2022, AI, especially Large Language Models (LLMs), gained significant attention and hype due to their ability to perform various tasks like translation and coding through simple prompts. I also think there was a large component of these models being so conversational and accessible to non-technical folks. However, a shift is occurring from focusing solely on LLMs to using compound AI systems, which integrate multiple components to get better results. This blog explores this trend, its reasons, and the tools emerging to support it.</p>
-            <p>Emergence of Compound AI Systems:
-            Compound AI systems combine multiple interacting components to tackle tasks, unlike standalone AI models. For instance, Google’s AlphaCode 1 uses LLMs to generate numerous solutions and then filters them, achieving high success in coding tasks. Similarly, AlphaGeometry combines LLMs with symbolic solvers for geometry problems. We have also recently seen the release of OpenAI's model designed to criticize OpenAI's other model. This trend is also evident in enterprise applications, with many using retrieval-augmented generation (RAG) and multi-step chains.</p>
-            <h3 id="reasons-for-the-shift">Reasons for the Shift:</h3>
-            <pre>
+<!-- ========================= -->
+<!--     TERMINAL WINDOW      -->
+<!-- ========================= -->
+<div class="terminal-window">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="title">~/blog/compound-ai-systems</span>
+  </div>
+
+  <div class="terminal-content">
+    <div class="section">
+
+      <!-- BEGIN ALL ORIGINAL TEXT (PRESERVED EXACTLY) -->
+
+      <p>Link:
+        <a href="https://bair.berkeley.edu/blog/2023/02/18/compound-ai-systems/">
+          https://bair.berkeley.edu/blog/2023/02/18/compound-ai-systems/
+        </a>
+      </p>
+
+      <h2 id="citation">Citation</h2>
+      <p>
+        Matei Zaharia, Omar Khattab, Lingjiao Chen, Jared Quincy Davis, Heather Miller,
+        Chris Potts, James Zou, Michael Carbin, Jonathan Frankle, Naveen Rao, and Ali Ghodsi.
+        “The Shift from Models to Compound AI Systems.” February 17, 2024. Accessed June 12, 2024.
+        <a href="https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/">
+          https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/
+        </a>
+      </p>
+
+      <p>This review was written with the help of ChatGPT</p>
+
+      <h1 id="summary-of-blog-post">Summary of Blog Post</h1>
+
+      <h3 id="introduction">Introduction:</h3>
+      <p>
+        In 2022, AI, especially Large Language Models (LLMs), gained significant attention and hype due to
+        their ability to perform various tasks like translation and coding through simple prompts. I also
+        think there was a large component of these models being so conversational and accessible to
+        non-technical folks. However, a shift is occurring from focusing solely on LLMs to using compound AI
+        systems, which integrate multiple components to get better results. This blog explores this trend, its
+        reasons, and the tools emerging to support it.
+      </p>
+
+      <p>
+        Emergence of Compound AI Systems:
+        Compound AI systems combine multiple interacting components to tackle tasks, unlike standalone AI
+        models. For instance, Google’s AlphaCode 1 uses LLMs to generate numerous solutions and then filters
+        them, achieving high success in coding tasks. Similarly, AlphaGeometry combines LLMs with symbolic
+        solvers for geometry problems. We have also recently seen the release of OpenAI's model designed to
+        criticize OpenAI's other model. This trend is also evident in enterprise applications, with many using
+        retrieval-augmented generation (RAG) and multi-step chains.
+      </p>
+
+      <h3 id="reasons-for-the-shift">Reasons for the Shift:</h3>
+      <pre>
 1. System Design Efficiency: Enhancing AI task performance through system design often yields better cost-to-benefit ratios than simply scaling up model training. For example, engineering a system to sample multiple solutions can significantly improve performance more cost-effectively than increasing the training budget.
 2. Dynamic Systems: Static training datasets limit models, necessitating systems that can incorporate real-time data through components like search and retrieval. Updating a SQL database and using that to update your model output is easy.
 3. Improved Control and Trust: Compound systems allow for better control and reliability by filtering outputs and verifying facts, addressing issues like hallucinations in LLMs.
 4. Variable Performance Goals: Different applications require varying quality and cost levels. Compound systems allow developers to fine-tune performance to meet specific needs, from cost-effective suggestions to high-accuracy, high-cost solutions.
-            </pre>
-            <h3 id="challenges-in-developing-compound-ai-systems">Challenges in Developing Compound AI Systems:</h3>
-            <pre>
+      </pre>
+
+      <h3 id="challenges-in-developing-compound-ai-systems">Challenges in Developing Compound AI Systems:</h3>
+      <pre>
 1. Design Space: The vast array of possible system designs and resource allocation strategies presents a significant challenge. Developers must explore various configurations to optimize performance.
 2. Optimization: Unlike single models, compound systems contain non-differentiable components, complicating end-to-end optimization. New methods and tools, like DSPy, are emerging to address this.
 3. Operation: Managing the operations of compound systems is more complex, requiring advanced monitoring, data handling, and security measures to ensure reliability and safety.
-            </pre>
-            <h3 id="emerging-tools-and-paradigms">Emerging Tools and Paradigms:</h3>
-            <pre>
+      </pre>
+
+      <h3 id="emerging-tools-and-paradigms">Emerging Tools and Paradigms:</h3>
+      <pre>
 1. Composition Frameworks and Strategies: Frameworks like LangChain and agent frameworks like AutoGPT enable developers to build applications using multiple AI models and components. New inference strategies, such as chain-of-thought and self-consistency, are also being developed to improve outputs.
 2. Optimization Tools: DSPy aims to optimize compound systems by tuning pipelines to maximize performance metrics. FrugalGPT and AI gateways like Databricks AI Gateway and OpenRouter help manage costs by routing inputs to the most appropriate models.
 3. Operational Tools: Tools like LangSmith, Phoenix Traces, and Databricks Inference Tables track and evaluate the performance of compound systems, aiding in fine-grained monitoring and debugging. Research tools like DSPy Assertions and AI-based quality evaluation methods further enhance reliability and output quality.
-            </pre>
-            <h3 id="conclusion">Conclusion:</h3>
-            <p>The shift from monolithic AI models to compound AI systems represents a significant trend in AI development. As models improve, the need for sophisticated systems combining various components will likely grow, driven by the desire for better control, reliability, and performance. The ongoing development of tools and frameworks to support this shift is crucial, and compound AI systems are poised to remain a leading paradigm in maximizing AI application quality and reliability for the near future.</p>
-            <h1 id="thoughts">Thoughts</h1>
-            <h3>The Shift from Models to Compound AI Systems: Why We Should Care About Effectiveness Over Benchmarks</h3>
-            <p>In 2022, AI got a lot of attention. Big, shiny Large Language Models (LLMs) like GPT-4 were all the rage, promising to solve everything from your translation issues to generating code that might not entirely crash your system. None of us could go two days without watching some exec incorrectly talk about AI in a powerpoint slide deck While it’s great to see what the cutting-edge can do, there’s an important shift happening that deserves our attention—especially for those of us actually trying to get things done in the real world. So get ready for the next PowerPoint buzz word: Compound AI Systems.</p>
-            <h3>State-of-the-Art vs. Real-World Usefulness</h3>
-            <p>If you’re like most data scientists and engineers, you’ve probably been caught up in the hype of the latest AI model releases and hopefully you’ve gotten a pay raise. Sure, it’s exciting to see how a new LLM can squeeze out a few more percentage points on some benchmark. But I honestly do not think this helps us deliver better, more effective solutions.</p>
-            <p>While the big tech companies are busy flexing their muscles and trying to seem ahead of the curve for their shareholders (to me it feels like all those people competing to have the biggest truck), many of us are finding that the most impactful advancements are coming from compound AI systems. We just have not been calling them that. These aren’t just monolithic models; they’re cleverly engineered systems that combine multiple components to get the job done.</p>
-            <h3>The Evolution of Machine Learning in Real Projects</h3>
-            <p>Let’s take a quick trip down memory lane to see how bringing ML to normal projects has evolved over the years.</p>
-            <pre>
+      </pre>
+
+      <h3 id="conclusion">Conclusion:</h3>
+      <p>
+        The shift from monolithic AI models to compound AI systems represents a significant trend in AI
+        development. As models improve, the need for sophisticated systems combining various components will
+        likely grow, driven by the desire for better control, reliability, and performance. The ongoing
+        development of tools and frameworks to support this shift is crucial, and compound AI systems are poised
+        to remain a leading paradigm in maximizing AI application quality and reliability for the near future.
+      </p>
+
+      <h1 id="thoughts">Thoughts</h1>
+
+      <h3>The Shift from Models to Compound AI Systems: Why We Should Care About Effectiveness Over Benchmarks</h3>
+      <p>
+        In 2022, AI got a lot of attention. Big, shiny Large Language Models (LLMs) like GPT-4 were all the rage,
+        promising to solve everything from your translation issues to generating code that might not entirely
+        crash your system. None of us could go two days without watching some exec incorrectly talk about AI in a
+        powerpoint slide deck While it’s great to see what the cutting-edge can do, there’s an important shift
+        happening that deserves our attention—especially for those of us actually trying to get things done in
+        the real world. So get ready for the next PowerPoint buzz word: Compound AI Systems.
+      </p>
+
+      <h3>State-of-the-Art vs. Real-World Usefulness</h3>
+      <p>
+        If you’re like most data scientists and engineers, you’ve probably been caught up in the hype of the
+        latest AI model releases and hopefully you’ve gotten a pay raise. Sure, it’s exciting to see how a new
+        LLM can squeeze out a few more percentage points on some benchmark. But I honestly do not think this
+        helps us deliver better, more effective solutions.
+      </p>
+      <p>
+        While the big tech companies are busy flexing their muscles and trying to seem ahead of the curve for
+        their shareholders (to me it feels like all those people competing to have the biggest truck), many of us
+        are finding that the most impactful advancements are coming from compound AI systems. We just have not
+        been calling them that. These aren’t just monolithic models; they’re cleverly engineered systems that
+        combine multiple components to get the job done.
+      </p>
+
+      <h3>The Evolution of Machine Learning in Real Projects</h3>
+      <p>Let’s take a quick trip down memory lane to see how bringing ML to normal projects has evolved over the years.</p>
+
+      <pre>
 • Early 1999s: Feature Engineering: Back in the day, the name of the game was feature engineering. We spent countless hours manually crafting features from raw data. It was a laborious process, but it taught us the importance of domain knowledge and creativity in ML.
 • 2011: Convolutional Neural Networks (CNNs): Enter the era of CNNs. With the success of AlexNet in the ImageNet competition, deep learning started to dominate. Suddenly, feature engineering took a back seat as CNNs learned features directly from data. This was a major leap forward, especially in fields like computer vision.
 • 2017-2022: Transfer Learning: As CNNs became the norm, transfer learning emerged as a powerful technique. We started fine-tuning models pre-trained on large datasets like ImageNet to tackle specific tasks. This approach significantly reduced the amount of data and compute required, making advanced ML accessible to more projects.
 • Today: Compound AI Systems: Now, we’re in the era of compound AI systems. These systems go beyond single models, combining multiple components like LLMs, retrieval mechanisms, and symbolic engines to create more effective and adaptable solutions. The focus is on building systems that are practical and reliable, rather than just pushing the boundaries of benchmarks.
-            </pre>
-            <h3>Why Compound AI Systems Are Taking Over</h3>
-            <p>So why are these compound systems becoming the go-to for achieving state-of-the-art results? Here are a few reasons:</p>
-            <pre>
+      </pre>
+
+      <h3>Why Compound AI Systems Are Taking Over</h3>
+      <p>So why are these compound systems becoming the go-to for achieving state-of-the-art results? Here are a few reasons:</p>
+
+      <pre>
 1. System Design Trumps Model Size: Sometimes, improving a task’s performance through better system design is far more effective than just scaling up model size. For instance, Google’s AlphaCode 2 uses LLMs to generate and filter a million potential solutions for coding problems. This approach beats merely throwing more compute at a single model.
 2. Dynamic and Up-to-Date: Machine learning models are trained on static datasets, meaning their “knowledge” is fixed. Compound systems can integrate with search and retrieval mechanisms to pull in the latest data, making them more dynamic and adaptable.
 3. Better Control and Trust: Pure neural network models can be like unruly teenagers—hard to control and prone to hallucination (yes, they make stuff up). Compound systems allow us to add layers of checks and balances, improving reliability and user trust.
 4. Flexible Performance Goals: Not all applications need the most expensive, cutting-edge models. Sometimes, a smaller, well-tuned model does the job just fine. Compound systems let us mix and match components to balance quality and cost effectively.
-            </pre>
-            <p>A Few Examples of Compound AI Systems in Action noted in the paper:</p>
-            <pre>
+      </pre>
+
+      <p>A Few Examples of Compound AI Systems in Action noted in the paper:</p>
+
+      <pre>
 • AlphaCode 1: This system uses fine-tuned LLMs to generate coding solutions, then employs a scoring module to filter and score these solutions, achieving results comparable to human coders.
 • AlphaGeometry: Combines LLMs with a symbolic math engine to solve complex geometry problems, performing on par with high-level math competitors.
 • Medprompt: Uses a combination of GPT-5, nearest-neighbor search, and multiple generated solutions to answer medical questions, outperforming specialized medical models.
 • ChatGPT Plus: Enhances a basic LLM with plugins for web browsing, code interpretation, and image generation, creating a versatile and popular consumer AI product.
-            </pre>
-            <p>Although these are still the mega projects of the big tech companies. I think the we can find effective examples of Compound AI Systems in our daily projects. This could be a speech recognition model that feeds into a language model or a computer vision algorithm that outputs text which is then fed into an LLM to generate descriptions or provide Q&A capabilities. The most abundant example seems to be RAG systems. From what I have seen, this is generally the best way to deploy a ChatGPT like capabilities internally</p>
-            <h3>Key Challenges in Developing Compound AI Systems</h3>
-            <p>Alright, so compound AI systems are cool, but they’re not without their challenges:</p>
-            <pre>
+      </pre>
+
+      <p>
+        Although these are still the mega projects of the big tech companies. I think the we can find effective
+        examples of Compound AI Systems in our daily projects. This could be a speech recognition model that feeds
+        into a language model or a computer vision algorithm that outputs text which is then fed into an LLM to
+        generate descriptions or provide Q&A capabilities. The most abundant example seems to be RAG systems. From
+        what I have seen, this is generally the best way to deploy a ChatGPT like capabilities internally
+      </p>
+
+      <h3>Key Challenges in Developing Compound AI Systems</h3>
+      <p>Alright, so compound AI systems are cool, but they’re not without their challenges:</p>
+
+      <pre>
 1. Design Space Overload: The sheer number of possible designs for a given task can be overwhelming.
 2. Optimization Woes: Unlike single models, compound systems involve non-differentiable components, making end-to-end optimization tricky.
 3. Operational Complexities: Managing the operation of compound systems is more complex than traditional models.
-            </pre>
-            <p>Bottom line: Waiting for the next version of a mega-model from the big tech giants to fix your problem is a complete waste of time. The future of AI is in your ability to stitch pieces together that are effective, adaptable, and reliable. Instead of chasing incremental improvements on benchmarks, focus on building systems that work well for your specific needs today.</p>
-            <p>Try some stuff with the tools and frameworks available, maybe break prod once or twice, experiment with different designs, and optimize for real-world performance. By leveraging compound AI systems, you can deliver better results faster and more cost-effectively than relying on the latest state-of-the-art model.</p>
-            <p>The shift from monolithic models to compound AI systems is a game-changer for AI development. By embracing this approach, we can achieve greater effectiveness and reliability in our applications. So, let’s move beyond the hype and start building systems that truly make a difference.</p>
+      </pre>
+
+      <p>
+        Bottom line: Waiting for the next version of a mega-model from the big tech giants to fix your problem is a
+        complete waste of time. The future of AI is in your ability to stitch pieces together that are effective,
+        adaptable, and reliable. Instead of chasing incremental improvements on benchmarks, focus on building systems
+        that work well for your specific needs today.
+      </p>
+
+      <p>
+        Try some stuff with the tools and frameworks available, maybe break prod once or twice, experiment with
+        different designs, and optimize for real-world performance. By leveraging compound AI systems, you can deliver
+        better results faster and more cost-effectively than relying on the latest state-of-the-art model.
+      </p>
+
+      <p>
+        The shift from monolithic models to compound AI systems is a game-changer for AI development. By embracing
+        this approach, we can achieve greater effectiveness and reliability in our applications. So, let’s move beyond
+        the hype and start building systems that truly make a difference.
+      </p>
+
+      <!-- END FULL ORIGINAL TEXT -->
+
     </div>
- <!-- End Page Container -->
+  </div>
 </div>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<footer class="footer">
   <p>Other places you can find me on the web</p>
-  <a href="https://github.com/matthew-kersting"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <p>
+    <a href="https://github.com/matthew-kersting">GitHub</a> |
+    <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
+  </p>
 </footer>
 
 </body>
 </html>
-

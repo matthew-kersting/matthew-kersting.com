@@ -1,157 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Matthew Kersting</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
+<title>Matthew Kersting – Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../css/style.css">
+
 </head>
-<body class="w3-light-grey">
+<body>
 
-<!-- Links (sit on top) -->
-<div class="w3-margin-bottom">
-    <div class="w3-row w3-large w3-teal">
-      <div class="w3-right w3-hide-small">
-        <a href="../index.html" class="w3-bar-item w3-button">HOME</a>
-        <a href="../html/research.html" class="w3-bar-item w3-button">RESEARCH</a>
-        <a href="../html/blog/blog.html" class="w3-bar-item w3-button">BLOG</a>
-        <a href="../pdfs/matthew-kersting-resume.pdf" class="w3-bar-item w3-button">RESUME</a>
-      </div>
+<!-- ========================= -->
+<!--   TOP TERMINAL NAV BAR   -->
+<!-- ========================= -->
+<div class="terminal-nav">
+  <div class="nav-buttons">
+    <span class="btn red"></span>
+    <span class="btn yellow"></span>
+    <span class="btn green"></span>
+  </div>
+
+  <div class="nav-links">
+    <a href="../index.html">HOME</a>
+    <span class="divider">|</span>
+    <a href="../html/research.html">RESEARCH</a>
+    <span class="divider">|</span>
+    <a href="../html/blog/blog.html">BLOG</a>
+    <span class="divider">|</span>
+    <a href="../pdfs/matthew-kersting-resume.pdf">RESUME</a>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!--     TERMINAL WINDOW      -->
+<!-- ========================= -->
+<div class="terminal-window">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="title">~/research</span>
+  </div>
+
+  <div class="terminal-content">
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 1      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>Condition-based Maintenance using Unsupervised Time-series Anomaly Detection. <i>Fleet Maintenance Modernization Symposium 2023</i>.</h3>
+      <p>Kersting, M., Patrikar, A., Schneider, E., Kusunoki-Martin, T., Drumm, A., O’Neil, C. (2023)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        United States maritime services are looking to better integrate artificial intelligence (AI) into their maintenance procedures
+        to improve readiness. Modern naval ships employ many onboard sensors to collect information about the ship’s systems,
+        performance, and navigation parameters. The current method for analyzing this data and detecting possible issues is mostly
+        manual. The abundance of sensor data enables one to apply machine learning (ML) techniques to continuously monitor
+        and analyze the ship’s operations. ML systems can be applied to automatically detect or predict and report potential
+        failures. Using ML to automate the analysis of shipboard sensors will allow the Navy to move from time-based
+        maintenance to condition-based maintenance. In this paper, we describe experiments in which the sensor data is
+        represented as multivariate time-series. In practice, the anomalies do not occur frequently, and the data associated with
+        anomalies is scarce. Therefore, we apply unsupervised time-series anomaly detection (UTSAD) techniques to find
+        anomalies. Initially, the experiments are carried out on a simulated time-series with artificially inserted anomalies, so that
+        the ground truth is known, and quantitative results can be obtained. We experiment with point anomalies as well as
+        subsequence anomalies such as shift, trend, and variance anomalies. For the detection of anomalies, we present results
+        using a density-based spatial clustering of applications with noise (DBSCAN) method, a tree-based isolation forest (IF)
+        method, and a reconstruction-based autoencoder (AE) method. Finally, we present results on the actual ship data and
+        discuss the implementation of an onboard real-time hierarchical analytics system.
+      </p>
     </div>
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 2      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>High-Resolution Volumetric Imaging Constrains Compartmental Models to Explore Synaptic Integration and Temporal Processing by Cochlear Nucleus Globular Bushy Cells. <i>eLife, 12</i>, e83393. <a href="https://doi.org/10.7554/eLife.83393">DOI</a></h3>
+      <p>Spirou, G.A., Kersting, M., Carr, S., Razzaq, B., Yamamoto Alves Pinto, C., Dawson, M., Ellisman, M.K., Manis, P.B. (2023)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        Globular bushy cells (GBCs) of the cochlear nucleus play central roles in the temporal processing of sound. Despite investigation over many decades,
+        fundamental questions remain about their dendrite structure, afferent innervation, and integration of synaptic inputs. Here, we use volume electron
+        microscopy (EM) of the mouse cochlear nucleus to construct synaptic maps that precisely specify convergence ratios and synaptic weights for auditory
+        nerve innervation and accurate surface areas of all postsynaptic compartments. Detailed biophysically based compartmental models can help develop
+        hypotheses regarding how GBCs integrate inputs to yield their recorded responses to sound. We established a pipeline to export a precise reconstruction
+        of auditory nerve axons and their endbulb terminals together with high-resolution dendrite, soma, and axon reconstructions into biophysically detailed
+        compartmental models that could be activated by a standard cochlear transduction model. With these constraints, the models predict auditory nerve input
+        profiles whereby all endbulbs onto a GBC are subthreshold (coincidence detection mode), or one or two inputs are suprathreshold (mixed mode). The models
+        also predict the relative importance of dendrite geometry, soma size, and axon initial segment length in setting action potential threshold and generating
+        heterogeneity in sound-evoked responses, and thereby propose mechanisms by which GBCs may homeostatically adjust their excitability. Volume EM also reveals
+        new dendritic structures and dendrites that lack innervation. This framework defines a pathway from subcellular morphology to synaptic connectivity, and
+        facilitates investigation into the roles of specific cellular features in sound encoding. We also clarify the need for new experimental measurements to
+        provide missing cellular parameters, and predict responses to sound for further in vivo studies, thereby serving as a template for investigation of other
+        neuron classes.
+      </p>
+    </div>
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 3      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>Transcriptional Profiling Reveals Roles of Intercellular Fgf9 Signaling in Astrocyte Maturation and Synaptic Refinement during Brainstem Development. <i>Journal of Biological Chemistry, 2022</i>, 102176. ISSN 0021-9258. <a href="https://doi.org/10.1016/j.jbc.2022.102176">DOI</a></h3>
+      <p>Brandebura, A.N., Kolson, D.R., Amick, E.M., Ramadan, J., Kersting, M.C., Nichol, R.H., Holcomb, P.S., Mathers, P.H., Stoilov, P., Spirou, G.A. (2022)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        Neural tissue maturation is a coordinated process under tight transcriptional control. We previously analyzed the kinetics of gene expression in the medial
+        nucleus of the trapezoid body (MNTB) in the brainstem during the critical postnatal phase of its development. While this work revealed timed execution of
+        transcriptional programs, it was blind to the specific cells where gene expression changes occurred. Here, we utilized single-cell RNA-Seq to determine
+        transcriptional profiles of each major MNTB cell type. We discerned directional signaling patterns between neuronal, glial, and vascular-associated cells
+        for VEGF, TGFβ, and Delta-Notch pathways during a robust period of vascular remodeling in the MNTB. Furthermore, we describe functional outcomes of the
+        disruption of neuron-astrocyte fibroblast growth factor 9 (Fgf9) signaling. We used a conditional KO (cKO) approach to genetically delete Fgf9 from principal
+        neurons in the MNTB, which led to an early onset of glial fibrillary acidic protein (Gfap) expression in astrocytes. In turn, Fgf9 cKO mice show increased
+        levels of astrocyte-enriched brevican (Bcan), a component of the perineuronal net matrix that ensheaths principal neurons in the MNTB and the large calyx
+        of Held terminal, while levels of the neuron-enriched hyaluronan and proteoglycan link protein 1 (Hapln1) were unchanged. Finally, volumetric analysis of
+        vesicular glutamate transporters 1 and 2 (Vglut1/2), which serves as a proxy for terminal size, revealed an increase in calyx of Held volume in the Fgf9 cKO.
+        Overall, we demonstrate a coordinated neuron-astrocyte Fgf9 signaling network that functions to regulate astrocyte maturation, perineuronal net structure,
+        and synaptic refinement.
+      </p>
+    </div>
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 4      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>Convergence of Auditory Nerve Fibers onto Globular Bushy Cells. <i>USF Tampa Graduate Theses and Dissertations</i>. <a href="https://digitalcommons.usf.edu/etd/9543">Link</a></h3>
+      <p>Kersting, Matthew. (2020)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        Globular bushy cells (GBCs) of the cochlear nucleus are specialized neurons that encode the temporal features of sound. Multiple auditory nerve inputs are known
+        to synapse onto a single GBC, but the exact number and sizes of these inputs have not been systematically investigated in adult mice. To gain a high-resolution
+        and unbiased look at the auditory inputs contacting GBCs, our lab utilized Serial Block-Face Scanning Electron Microscopy. Specifically, 21 GBCs and all their
+        large inputs were reconstructed at nanometer resolution. To produce the most precise results, we applied careful attention to the reconstruction and implemented
+        cutting-edge meshing algorithms. We found that a range of 5 – 12 large auditory nerve terminals converge onto each GBC, which is higher than previously reported
+        electrophysiological estimates. Interestingly, some GBCs were found to have a single large, dominant input, whereas others did not. Thus, we conclude that there
+        are two models of GBC innervation, i.e., a mixed model (1 or 2 suprathreshold inputs and multiple subthreshold) and a coincidence detection model (all subthreshold
+        inputs). The detailed reconstructions were then combined with a GBC computational model which confirmed the presence of two innervation models. We also present novel
+        discoveries about the structure of GBCs that could only be seen in volume electron microscopy.
+      </p>
+    </div>
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 5      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>Convergence of Auditory Nerve Fibers onto Globular Bushy Cells. <i>Society for Neuroscience Abstract, October 2019</i>. <a href="https://www.abstractsonline.com/pp8/#!/7883/presentation/44569">Link</a></h3>
+      <p>Spirou, G.A., Kersting, M., Ellisman, M., Manis, P.B. (2019)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        Globular bushy cells demonstrate enhanced synchrony to periodicity in the acoustic waveform relative to auditory nerve fibers (ANF), which provide their driving
+        activation. Two very different mechanistic models to account for this property are the convergence of multiple subthreshold inputs that sum in a short coincidence
+        detection time window, and convergence of multiple suprathreshold inputs, whereby the shortest latency input on each stimulus cycle generates a postsynaptic spike.
+        To provide an accurate count and size measurement of these inputs, we imaged a portion of the GBC region of the cochlear nucleus at ultrastructural resolution, using
+        serial blockface scanning electron microscopy (SBEM). This volume contained 27 complete GBC somata, which is the location of innervation by ANFs via modified endbulb
+        terminals. Minimal stimulation in brain slices indicated 4-6 ANFs (5.1 ± 0.64 sd; Cao and Oertel, 2010) converged on single GBCs. Anatomical reconstruction of nerve
+        terminals indicated a greater number (8.0 ± 2.03) of large terminals per GBC. Two patterns of innervation were noted: pattern #1 had 1-2 large and several moderately
+        sized inputs (9 cells) and pattern #2 had only moderately sized inputs (7 cells), which suggest a mixed model of 1-2 suprathreshold and several subthreshold inputs,
+        and a model of only subthreshold inputs, respectively. To assay the functional significance of these models, we generated swc files from GBC reconstructions, converted
+        them into hoc code, and tested the effects of these two input patterns on a compartmental GBC model. Activation of individual inputs revealed that large inputs were
+        suprathreshold and moderately sized inputs were subthreshold. We next generated spike patterns on afferent ANFs using a cochlear transduction model (Zilaney et al. 2014),
+        and showed that model GBCs had enhanced first spike precision over their individual ANF inputs. Furthermore, model GBCs had enhanced vector strength in response to amplitude
+        modulated CF tones over their ANF inputs (vector strength 0.66). Pattern #2 (mixed model) generated more synchronous (0.89) spike trains than pattern #1 (only subthreshold;
+        0.84), raising questions about the functional utility of mixed supra and subthreshold inputs.
+      </p>
+    </div>
+
+    <!-- ========================= -->
+    <!--  PUBLICATION BLOCK 6      -->
+    <!-- ========================= -->
+    <div class="section">
+      <h3>New Principles for Cell and Circuit Function Revealed by Volume Nanoscale Imaging. <i>Experimental Biology (FASEB), V33</i>, No. 1_supplement, April 2019. <a href="https://doi.org/10.1096/fasebj.2019.33.1_supplement.201.1">DOI</a></h3>
+      <p>Spirou, G.A., Kersting, M., Bayliss, T., Razzaq, B., Holcomb, P., Morehead, M., Spencer, N., Ellisman, M., Manis, P.B. (2019)</p>
+
+      <div class="ascii-line"></div>
+
+      <p>
+        Computational properties of neural circuits are determined by the integrative properties and synaptic maps of their cellular elements. This information is challenging to
+        acquire. For example, in the auditory system it is incomplete for even the most studied cell type, the bushy cell (BC). BCs encode temporal fluctuations in sound amplitude,
+        and are important for a range of perceptual abilities including sound localization and communication. Prevailing theory is that one of two subtypes of BCs, called globular BCs,
+        accomplish their task by measuring coincidence of similarly weighted sub-threshold auditory nerve (AN) inputs using short integration time constants. However, the number and
+        sizes of these inputs are not known, and the synaptic map of dendrites is woefully incomplete. We employed serial blockface scanning electron microscopy (SBEM) of mouse cochlear
+        nucleus to acquire this information. This approach revealed more inputs (mean 7.8, mode 8, range 5–12, n = 15 cells) than estimated using physiological methods (mean 5.1, mode 5,
+        range 4–6, n = 8 cells; Cao and Oertel 2010), and a large range of sizes (35 – 302 μm2), and likely influence on BC activity. We discovered a new dendrite structure, called a hub,
+        which can yield up to 13 branches, and further document frequent and periodic swellings along dendritic processes. We completed the first synaptic map for a BC dendrite system, and
+        revealed that entire branches were non-innervated. Dendrite branches from the same and adjacent BCs were intertwined, and formed direct membrane contacts. We established a pipeline,
+        using 3D virtual reality software, called syGlass, developed in our laboratory, to skeletonize dendrites and export the structures for compartmental modeling in NEURON. These models
+        permitted activation of AN inputs individually, which revealed that the largest input onto one-half of cells was supra-threshold. Therefore BCs do not operate via a simple coincidence
+        model of uniformly weighted sub-threshold inputs. Dendrites served as a tuned current sink, since their removal rendered even the smallest AN input supra-threshold. Current work is
+        exploring the presence of electrical contacts at apposition of dendrite membrane, and whether these contacts improve synchrony in activity of BC clusters.
+      </p>
+    </div>
+
+  </div>
 </div>
 
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-    
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">Condition-based Maintenance using Unsupervised Time-series Anomaly Detection. <i>Fleet Maintenance Modernization Symposium 2023</i>. <a href="https://noblis.org/wp-content/uploads/2023/09/CBM_UTSAD_Manuscript_3.pdf">PDF</a></h3>
-            <p>Kersting, M., Patrikar, A., Schneider, E., Kusunoki-Martin, T., Drumm, A., O’Neil, C. (2023)</p>
-            <p>
-                United States maritime services are looking to better integrate artificial intelligence (AI) into their maintenance procedures
-                to improve readiness. Modern naval ships employ many onboard sensors to collect information about the ship’s systems,
-                performance, and navigation parameters. The current method for analyzing this data and detecting possible issues is mostly
-                manual. The abundance of sensor data enables one to apply machine learning (ML) techniques to continuously monitor
-                and analyze the ship’s operations. ML systems can be applied to automatically detect or predict and report potential
-                failures. Using ML to automate the analysis of shipboard sensors will allow the Navy to move from time-based
-                maintenance to condition-based maintenance. In this paper, we describe experiments in which the sensor data is
-                represented as multivariate time-series. In practice, the anomalies do not occur frequently, and the data associated with
-                anomalies is scarce. Therefore, we apply unsupervised time-series anomaly detection (UTSAD) techniques to find
-                anomalies. Initially, the experiments are carried out on a simulated time-series with artificially inserted anomalies, so that
-                the ground truth is known, and quantitative results can be obtained. We experiment with point anomalies as well as
-                subsequence anomalies such as shift, trend, and variance anomalies. For the detection of anomalies, we present results
-                using a density-based spatial clustering of applications with noise (DBSCAN) method, a tree-based isolation forest (IF)
-                method, and a reconstruction-based autoencoder (AE) method. Finally, we present results on the actual ship data and
-                discuss the implementation of an onboard real-time hierarchical analytics system.
-            </p>
-        </div>
-        
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">High-Resolution Volumetric Imaging Constrains Compartmental Models to Explore Synaptic Integration and Temporal Processing by Cochlear Nucleus Globular Bushy Cells. <i>eLife, 12</i>, e83393. <a href="https://doi.org/10.7554/eLife.83393">DOI</a></h3>
-            <p>Spirou, G.A., Kersting, M., Carr, S., Razzaq, B., Yamamoto Alves Pinto, C., Dawson, M., Ellisman, M.K., Manis, P.B. (2023)</p>
-            <p>
-                Globular bushy cells (GBCs) of the cochlear nucleus play central roles in the temporal processing of sound. Despite investigation over many decades, 
-                fundamental questions remain about their dendrite structure, afferent innervation, and integration of synaptic inputs. Here, we use volume electron 
-                microscopy (EM) of the mouse cochlear nucleus to construct synaptic maps that precisely specify convergence ratios and synaptic weights for auditory 
-                nerve innervation and accurate surface areas of all postsynaptic compartments. Detailed biophysically based compartmental models can help develop 
-                hypotheses regarding how GBCs integrate inputs to yield their recorded responses to sound. We established a pipeline to export a precise reconstruction 
-                of auditory nerve axons and their endbulb terminals together with high-resolution dendrite, soma, and axon reconstructions into biophysically detailed
-                compartmental models that could be activated by a standard cochlear transduction model. With these constraints, the models predict auditory nerve input 
-                profiles whereby all endbulbs onto a GBC are subthreshold (coincidence detection mode), or one or two inputs are suprathreshold (mixed mode). The models 
-                also predict the relative importance of dendrite geometry, soma size, and axon initial segment length in setting action potential threshold and generating 
-                heterogeneity in sound-evoked responses, and thereby propose mechanisms by which GBCs may homeostatically adjust their excitability. Volume EM also reveals 
-                new dendritic structures and dendrites that lack innervation. This framework defines a pathway from subcellular morphology to synaptic connectivity, and 
-                facilitates investigation into the roles of specific cellular features in sound encoding. We also clarify the need for new experimental measurements to 
-                provide missing cellular parameters, and predict responses to sound for further in vivo studies, thereby serving as a template for investigation of other 
-                neuron classes.
-            </p>
-        </div>
-        
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">Transcriptional Profiling Reveals Roles of Intercellular Fgf9 Signaling in Astrocyte Maturation and Synaptic Refinement during Brainstem Development. <i>Journal of Biological Chemistry, 2022</i>, 102176. ISSN 0021-9258. <a href="https://doi.org/10.1016/j.jbc.2022.102176">DOI</a></h3>
-            <p>Brandebura, A.N., Kolson, D.R., Amick, E.M., Ramadan, J., Kersting, M.C., Nichol, R.H., Holcomb, P.S., Mathers, P.H., Stoilov, P., Spirou, G.A. (2022)</p>
-            <p>
-                Neural tissue maturation is a coordinated process under tight transcriptional control. We previously analyzed the kinetics of gene expression in the medial 
-                nucleus of the trapezoid body (MNTB) in the brainstem during the critical postnatal phase of its development. While this work revealed timed execution of 
-                transcriptional programs, it was blind to the specific cells where gene expression changes occurred. Here, we utilized single-cell RNA-Seq to determine 
-                transcriptional profiles of each major MNTB cell type. We discerned directional signaling patterns between neuronal, glial, and vascular-associated cells 
-                for VEGF, TGFβ, and Delta-Notch pathways during a robust period of vascular remodeling in the MNTB. Furthermore, we describe functional outcomes of the 
-                disruption of neuron-astrocyte fibroblast growth factor 9 (Fgf9) signaling. We used a conditional KO (cKO) approach to genetically delete Fgf9 from principal 
-                neurons in the MNTB, which led to an early onset of glial fibrillary acidic protein (Gfap) expression in astrocytes. In turn, Fgf9 cKO mice show increased 
-                levels of astrocyte-enriched brevican (Bcan), a component of the perineuronal net matrix that ensheaths principal neurons in the MNTB and the large calyx 
-                of Held terminal, while levels of the neuron-enriched hyaluronan and proteoglycan link protein 1 (Hapln1) were unchanged. Finally, volumetric analysis of 
-                vesicular glutamate transporters 1 and 2 (Vglut1/2), which serves as a proxy for terminal size, revealed an increase in calyx of Held volume in the Fgf9 cKO. 
-                Overall, we demonstrate a coordinated neuron-astrocyte Fgf9 signaling network that functions to regulate astrocyte maturation, perineuronal net structure, 
-                and synaptic refinement.
-            </p>
-        </div>
-        
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">Convergence of Auditory Nerve Fibers onto Globular Bushy Cells. <i>USF Tampa Graduate Theses and Dissertations</i>. <a href="https://digitalcommons.usf.edu/etd/9543">Link</a></h3>
-            <p>Kersting, Matthew. (2020)</p>
-            <p>
-                Globular bushy cells (GBCs) of the cochlear nucleus are specialized neurons that encode the temporal features of sound. Multiple auditory nerve inputs are known 
-                to synapse onto a single GBC, but the exact number and sizes of these inputs have not been systematically investigated in adult mice. To gain a high-resolution 
-                and unbiased look at the auditory inputs contacting GBCs, our lab utilized Serial Block-Face Scanning Electron Microscopy. Specifically, 21 GBCs and all their 
-                large inputs were reconstructed at nanometer resolution. To produce the most precise results, we applied careful attention to the reconstruction and implemented 
-                cutting-edge meshing algorithms. We found that a range of 5 – 12 large auditory nerve terminals converge onto each GBC, which is higher than previously reported 
-                electrophysiological estimates. Interestingly, some GBCs were found to have a single large, dominant input, whereas others did not. Thus, we conclude that there 
-                are two models of GBC innervation, i.e., a mixed model (1 or 2 suprathreshold inputs and multiple subthreshold) and a coincidence detection model (all subthreshold 
-                inputs). The detailed reconstructions were then combined with a GBC computational model which confirmed the presence of two innervation models. We also present novel 
-                discoveries about the structure of GBCs that could only be seen in volume electron microscopy.
-            </p>
-        </div>
-        
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">Convergence of Auditory Nerve Fibers onto Globular Bushy Cells. <i>Society for Neuroscience Abstract, October 2019</i>.  <a href="https://www.abstractsonline.com/pp8/#!/7883/presentation/44569">Link</a></h3>
-            <p>Spirou, G.A., Kersting, M., Ellisman, M., Manis, P.B. (2019)</p>
-            <p>
-                Globular bushy cells demonstrate enhanced synchrony to periodicity in the acoustic waveform relative to auditory nerve fibers (ANF), which provide their driving 
-                activation. Two very different mechanistic models to account for this property are the convergence of multiple subthreshold inputs that sum in a short coincidence 
-                detection time window, and convergence of multiple suprathreshold inputs, whereby the shortest latency input on each stimulus cycle generates a postsynaptic spike. 
-                To provide an accurate count and size measurement of these inputs, we imaged a portion of the GBC region of the cochlear nucleus at ultrastructural resolution, using 
-                serial blockface scanning electron microscopy (SBEM). This volume contained 27 complete GBC somata, which is the location of innervation by ANFs via modified endbulb 
-                terminals. Minimal stimulation in brain slices indicated 4-6 ANFs (5.1 ± 0.64 sd; Cao and Oertel, 2010) converged on single GBCs. Anatomical reconstruction of nerve 
-                terminals indicated a greater number (8.0 ± 2.03) of large terminals per GBC. Two patterns of innervation were noted: pattern #1 had 1-2 large and several moderately 
-                sized inputs (9 cells) and pattern #2 had only moderately sized inputs (7 cells), which suggest a mixed model of 1-2 suprathreshold and several subthreshold inputs, 
-                and a model of only subthreshold inputs, respectively. To assay the functional significance of these models, we generated swc files from GBC reconstructions, converted 
-                them into hoc code, and tested the effects of these two input patterns on a compartmental GBC model. Activation of individual inputs revealed that large inputs were 
-                suprathreshold and moderately sized inputs were subthreshold. We next generated spike patterns on afferent ANFs using a cochlear transduction model (Zilaney et al. 2014), 
-                and showed that model GBCs had enhanced first spike precision over their individual ANF inputs. Furthermore, model GBCs had enhanced vector strength in response to amplitude 
-                modulated CF tones over their ANF inputs (vector strength 0.66). Pattern #2 (mixed model) generated more synchronous (0.89) spike trains than pattern #1 (only subthreshold; 
-                0.84), raising questions about the functional utility of mixed supra and subthreshold inputs.
-            </p>
-        </div>
-        
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-            <h3 class="w3-text-grey w3-padding-8">New Principles for Cell and Circuit Function Revealed by Volume Nanoscale Imaging. <i>Experimental Biology (FASEB), V33</i>, No. 1_supplement, April 2019. <a href="https://doi.org/10.1096/fasebj.2019.33.1_supplement.201.1">DOI</a></h3>
-            <p>Spirou, G.A., Kersting, M., Bayliss, T., Razzaq, B., Holcomb, P., Morehead, M., Spencer, N., Ellisman, M., Manis, P.B. (2019)</p>
-            <p>
-                Computational properties of neural circuits are determined by the integrative properties and synaptic maps of their cellular elements. This information is challenging to 
-                acquire. For example, in the auditory system it is incomplete for even the most studied cell type, the bushy cell (BC). BCs encode temporal fluctuations in sound amplitude, 
-                and are important for a range of perceptual abilities including sound localization and communication. Prevailing theory is that one of two subtypes of BCs, called globular BCs, 
-                accomplish their task by measuring coincidence of similarly weighted sub-threshold auditory nerve (AN) inputs using short integration time constants. However, the number and 
-                sizes of these inputs are not known, and the synaptic map of dendrites is woefully incomplete. We employed serial blockface scanning electron microscopy (SBEM) of mouse cochlear 
-                nucleus to acquire this information. This approach revealed more inputs (mean 7.8, mode 8, range 5–12, n = 15 cells) than estimated using physiological methods (mean 5.1, mode 5, 
-                range 4–6, n = 8 cells; Cao and Oertel 2010), and a large range of sizes (35 – 302 μm2), and likely influence on BC activity. We discovered a new dendrite structure, called a hub, 
-                which can yield up to 13 branches, and further document frequent and periodic swellings along dendritic processes. We completed the first synaptic map for a BC dendrite system, and 
-                revealed that entire branches were non-innervated. Dendrite branches from the same and adjacent BCs were intertwined, and formed direct membrane contacts. We established a pipeline, 
-                using 3D virtual reality software, called syGlass, developed in our laboratory, to skeletonize dendrites and export the structures for compartmental modeling in NEURON. These models 
-                permitted activation of AN inputs individually, which revealed that the largest input onto one-half of cells was supra-threshold. Therefore BCs do not operate via a simple coincidence 
-                model of uniformly weighted sub-threshold inputs. Dendrites served as a tuned current sink, since their removal rendered even the smallest AN input supra-threshold. Current work is 
-                exploring the presence of electrical contacts at apposition of dendrite membrane, and whether these contacts improve synchrony in activity of BC clusters.
-            </p>
-        </div>
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<!-- ========================= -->
+<!--        FOOTER             -->
+<!-- ========================= -->
+<footer class="footer">
   <p>Other places you can find me on the web</p>
-  <a href="https://github.com/matthew-kersting"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  <a href="https://github.com/matthew-kersting">GitHub</a> |
+  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
 </footer>
 
 </body>
