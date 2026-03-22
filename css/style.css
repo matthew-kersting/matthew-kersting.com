@@ -17,6 +17,45 @@ a:hover {
     text-shadow: 0 0 5px #66ffcc;
 }
 
+/* Top Navigation Bar */
+.terminal-nav {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background: #1a1a1a;
+    border-bottom: 2px solid #444;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.btn {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #444;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    font-weight: bold;
+}
+
+.divider {
+    color: #444;
+}
+
+/* Terminal Window */
 .terminal-window {
     max-width: 1100px;
     margin: 40px auto;
@@ -24,7 +63,7 @@ a:hover {
     box-shadow: 0 0 20px #0f0;
 }
 
-.window-header {
+.terminal-header {
     background: #1a1a1a;
     padding: 8px;
     color: #0f0;
@@ -34,10 +73,7 @@ a:hover {
     align-items: center;
 }
 
-.window-buttons {
-    margin-right: 10px;
-}
-.window-buttons span {
+.dot {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -46,13 +82,23 @@ a:hover {
     background: #444;
 }
 
-.window-buttons span:nth-child(1) { background: #ff605c; }
-.window-buttons span:nth-child(2) { background: #ffbd44; }
-.window-buttons span:nth-child(3) { background: #00ca4e; }
+.dot.red,  .btn.red    { background: #ff605c; }
+.dot.yellow, .btn.yellow { background: #ffbd44; }
+.dot.green, .btn.green  { background: #00ca4e; }
 
-.window-body {
+.title {
+    margin-left: 8px;
+}
+
+.terminal-content {
     padding: 20px;
     background: #000;
+}
+
+.terminal-content pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
 }
 
 hr.ascii {
@@ -61,14 +107,25 @@ hr.ascii {
     margin: 25px 0;
 }
 
+.ascii-line {
+    border-top: 1px solid #00ff66;
+    margin: 25px 0;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
 /* Layout for index.html */
 .flex-container {
     display: flex;
     gap: 30px;
 }
+
 .left-column {
     width: 32%;
 }
+
 .right-column {
     width: 68%;
 }
@@ -83,32 +140,10 @@ ul {
     list-style-type: square;
 }
 
-/* Header Navigation */
-.navbar {
-    text-align: right;
-    padding: 10px;
-    background: #111;
-    border-bottom: 2px solid #00ff66;
-}
-.navbar a {
-    margin-left: 20px;
-    font-weight: bold;
-}
-.navbar a:hover {
-    text-shadow: 0 0 3px #0f0;
-}
-
 /* Footer */
 footer {
     margin-top: 40px;
     padding: 20px;
     text-align: center;
     border-top: 2px solid #00ff66;
-}
-
-
-.terminal-content pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-x: auto;
 }
