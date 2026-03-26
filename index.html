@@ -4,201 +4,159 @@
   <meta charset="UTF-8">
   <title>Matthew Kersting</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<!-- ========================= -->
-<!--   TOP TERMINAL NAV BAR   -->
-<!-- ========================= -->
-<div class="terminal-nav">
-  <div class="nav-buttons">
-    <span class="btn red"></span>
-    <span class="btn yellow"></span>
-    <span class="btn green"></span>
-  </div>
-
+<nav class="site-nav">
+  <a class="site-title" href="./index.html">Matthew Kersting</a>
   <div class="nav-links">
-    <a href="./index.html">HOME</a>
-    <span class="divider">|</span>
-    <a href="./html/research.html">RESEARCH</a>
-    <span class="divider">|</span>
-    <a href="./html/blog/blog.html">BLOG</a>
-    <span class="divider">|</span>
-    <a href="./pdfs/matthew-kersting-resume.pdf">RESUME</a>
+    <a href="./index.html">Home</a>
+    <a href="./html/research.html">Research</a>
+    <a href="./html/blog/blog.html">Blog</a>
+    <a href="./pdfs/matthew-kersting-resume.pdf">Resume</a>
   </div>
-</div>
+</nav>
 
-<!-- ========================= -->
-<!--     TERMINAL WINDOW      -->
-<!-- ========================= -->
-<div class="terminal-window">
-  <div class="terminal-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-    <span class="title">~/home</span>
-  </div>
+<div class="container">
+  <div class="flex-container">
 
-  <div class="terminal-content">
+    <div class="left-column">
 
-    <div class="flex-container">
+      <img src="./images/avatar.jpg" class="avatar" alt="Matthew Kersting">
 
-      <!-- ========================= -->
-      <!--    LEFT COLUMN (PROFILE)  -->
-      <!-- ========================= -->
-      <div class="left-column">
+      <hr>
 
-        <h2>&gt; Matthew Kersting</h2>
-        <img src="./images/avatar.jpg" class="avatar" alt="Avatar">
+      <p><b>Occupation:</b> Machine Learning Engineer</p>
+      <p><b>Location:</b> South Eastern United States</p>
+      <p><b>Email:</b> <a href="mailto:matthew.kersting@pm.me">matthew.kersting@pm.me</a></p>
+      <p><b>PGP:</b> <a href="https://keys.openpgp.org/search?q=884969458DEF1473">884969458DEF1473</a></p>
 
-        <div class="ascii-line"></div>
+      <hr>
 
-        <p><b>Occupation:</b> Machine Learning Engineer</p>
-        <p><b>Location:</b> South Eastern United States</p>
-        <p><b>Email:</b> <a href="mailto:matthew.kersting@pm.me">matthew.kersting@pm.me</a></p>
-        <p><b>PGP:</b> <a href="https://keys.openpgp.org/search?q=884969458DEF1473">884969458DEF1473</a></p>
+      <h3>Skills</h3>
+      <ul>
+        <li>AI Integration</li>
+        <li>Large-scale ML Training</li>
+        <li>Full-Stack Development</li>
+        <li>Distributed Systems</li>
+        <li>Data Engineering</li>
+        <li>ML Research</li>
+      </ul>
 
-        <div class="ascii-line"></div>
+      <hr>
 
-        <h3>== Skills ==</h3>
-        <ul>
-          <li>AI Integration</li>
-          <li>Large-scale ML Training</li>
-          <li>Full-Stack Development</li>
-          <li>Distributed Systems</li>
-          <li>Data Engineering</li>
-          <li>ML Research</li>
-        </ul>
+      <h3>Languages</h3>
+      <ul>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>Go</li>
+        <li>C++</li>
+        <li>Rust</li>
+      </ul>
 
-        <div class="ascii-line"></div>
+      <hr>
 
-        <h3>== Programming Languages ==</h3>
-        <ul>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>Java</li>
-          <li>SQL</li>
-          <li>Go</li>
-          <li>C++</li>
-        </ul>
-
-        <div class="ascii-line"></div>
-
-        <h3>== Tools ==</h3>
-        <ul>
-          <li>Pytorch</li>
-          <li>Express.js</li>
-          <li>FastAPI</li>
-          <li>Springboot</li>
-          <li>PostgreSQL</li>
-          <li>Git</li>
-          <li>Elasticsearch</li>
-          <li>Kafka</li>
-          <li>Spark</li>
-          <li>AWS</li>
-          <li>AWS EMR</li>
-          <li>Ray</li>
-          <li>Docker</li>
-          <li>Kubernetes</li>
-          <li>Jenkins</li>
-          <li>Github Actions</li>
-        </ul>
-
-      </div>
-
-      <!-- ========================= -->
-      <!--    RIGHT COLUMN           -->
-      <!-- ========================= -->
-      <div class="right-column">
-
-        <!-- ABOUT -->
-        <h2>== About ==</h2>
-        <p>Greetings! I'm a machine learning engineer and applied mathematics graduate student with an interest for all things tech. Most of my professional work has been developing web apps that deploy ML services, but I have also done UI design, CI/CD work and Data Engineering.</p>
-
-        <p>My current focus is on scaling large ML modeling training pipelines. I use tools like Ray and Spark and build training pipelines on AWS to help detect all the bad things that bad people are trying to do to your computer.</p>
-
-        <p>My interests span the tech world. I try to keep track of a number of areas that I think could have big implications or are simply neat, such as neuromorphic computing, distributed systems research and homomorphic encryption (and AI of course, which is somewhat mainstream these days).</p>
-
-        <p>Feel free to shoot me an email if you want to chat! I always enjoy hearing from random people on the other side of the internet.</p>
-
-        <div class="ascii-line"></div>
-
-        <!-- WORK EXPERIENCE -->
-        <h2>== Work Experience ==</h2>
-
-        <h3>Machine Learning Engineer III — Crowdstrike</h3>
-        <p><i>Apr 2025 – Current</i></p>
-        <p>- Develop and support distributed compute pipelines using Ray, AWS, and Apache Spark, optimizing reliability, resource utilization, and end-to-end throughput</p>
-        <p>- Build and maintain large-scale ML training platforms used by data scientists across the organization, enabling distributed experimentation and rapid model iteration</p>
-        <p>- Contribute to ongoing modernization of ML tooling by standardizing deployments, improving CI/CD integration, and automating infrastructure provisioning across training environments</p>
-
-        <hr class="ascii">
-
-        <h3>Lead Data Engineer — Booz Allen Hamilton</h3>
-        <p><i>Jan 2024 – Apr 2025</i></p>
-        <p>- Performed as a Data Engineer for a prominent Enterprise data platform, utilized web scraping tools to gather documents, extract metadata, and organize data within AWS with automated jobs</p>
-        <p>- Developed a full-stack document management solution deployed via Kubernetes, including backend/frontend development, web server optimization, testing enhancements, and database architecture</p>
-        <p>- Implemented Security Technical Implementation Guidelines (STIGs) to ensure compliance and help facilitate the attainment of Authority to Operate (ATO)</p>
-
-        <hr class="ascii">
-
-        <h3>Software Engineer, Machine Learning — Noblis</h3>
-        <p><i>Jan 2021 – Dec 2023</i></p>
-        <p>- Tech-lead for an R&D project providing computer-vision capabilities to aid child exploitation investigations</p>
-        <p>- Engineered a secure and scalable Spring Boot web application which brings to production a variety of speech technology and machine learning capabilities</p>
-        <p>- Led a research initiative focused on developing a Data Lakehouse solution for Noblis, including management of data infrastructure, ETL pipelines, and the deployment of a large language model internally</p>
-        <p>- Engaged directly with stakeholders and led the development of a microservice web application</p>
-
-        <hr class="ascii">
-
-        <h3>Graduate Research Assistant — USF Medical Engineering</h3>
-        <p><i>Jun 2019 – Dec 2020</i></p>
-        <p>- Performed image segmentation and analysis on biological datasets leading to new principles of neural circuitry</p>
-        <p>- Directed multiple undergraduate researchers</p>
-        <p>- Assisted in course delivery and lecturing</p>
-
-        <hr class="ascii">
-
-        <h3>Undergraduate Research Assistant — WVU Rockefeller Neuroscience Institute</h3>
-        <p><i>Jun 2019 – Dec 2020</i></p>
-        <p>- Analyzed biological image datasets and discovered novel properties of neuronal interactions</p>
-        <p>- Developed Python scripts to automate data collection</p>
-
-        <div class="ascii-line"></div>
-
-        <!-- EDUCATION -->
-        <h2>== Education ==</h2>
-
-        <h3>Johns Hopkins Whiting School of Engineering</h3>
-        <p><i>2024 – Current</i></p>
-        <p>Graduate Certificate in Applied and Computational Mathematics</p>
-
-        <hr class="ascii">
-
-        <h3>University of South Florida</h3>
-        <p><i>2019 – 2020</i></p>
-        <p>Master of Science in Biomedical Engineering</p>
-
-        <hr class="ascii">
-
-        <h3>West Virginia University</h3>
-        <p><i>2015 – 2019</i></p>
-        <p>B.S. in Biology (Neuroscience emphasis)</p>
-
-      </div>
+      <h3>Tools</h3>
+      <ul>
+        <li>PyTorch</li>
+        <li>Express.js</li>
+        <li>FastAPI</li>
+        <li>Spring Boot</li>
+        <li>PostgreSQL</li>
+        <li>Git</li>
+        <li>Elasticsearch</li>
+        <li>Kafka</li>
+        <li>Spark</li>
+        <li>AWS / AWS EMR</li>
+        <li>Ray</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>Jenkins</li>
+        <li>GitHub Actions</li>
+      </ul>
 
     </div>
+
+    <div class="right-column">
+
+      <h2>About</h2>
+      <p>Greetings! I'm a machine learning engineer and applied mathematics graduate student with an interest for all things tech. Most of my professional work has been developing web apps that deploy ML services, but I have also done UI design, CI/CD work and Data Engineering.</p>
+      <p>My current focus is on scaling large ML model training pipelines. I use tools like Ray and Spark and build training pipelines on AWS to help detect all the bad things that bad people are trying to do to your computer.</p>
+      <p>My interests span the tech world. I try to keep track of a number of areas that I think could have big implications or are simply neat, such as neuromorphic computing, distributed systems research and homomorphic encryption (and AI of course, which is somewhat mainstream these days).</p>
+      <p>Feel free to shoot me an email if you want to chat! I always enjoy hearing from random people on the other side of the internet.</p>
+
+      <hr>
+
+      <h2>Work Experience</h2>
+
+      <h3>Machine Learning Engineer III &mdash; CrowdStrike</h3>
+      <p><i>Apr 2025 &ndash; Current</i></p>
+      <p>Develop and support distributed compute pipelines using Ray, AWS, and Apache Spark, optimizing reliability, resource utilization, and end-to-end throughput.</p>
+      <p>Build and maintain large-scale ML training platforms used by data scientists across the organization, enabling distributed experimentation and rapid model iteration.</p>
+      <p>Contribute to ongoing modernization of ML tooling by standardizing deployments, improving CI/CD integration, and automating infrastructure provisioning across training environments.</p>
+
+      <hr>
+
+      <h3>Lead Data Engineer &mdash; Booz Allen Hamilton</h3>
+      <p><i>Jan 2024 &ndash; Apr 2025</i></p>
+      <p>Performed as a Data Engineer for a prominent enterprise data platform, utilized web scraping tools to gather documents, extract metadata, and organize data within AWS with automated jobs.</p>
+      <p>Developed a full-stack document management solution deployed via Kubernetes, including backend/frontend development, web server optimization, testing enhancements, and database architecture.</p>
+      <p>Implemented Security Technical Implementation Guidelines (STIGs) to ensure compliance and help facilitate the attainment of Authority to Operate (ATO).</p>
+
+      <hr>
+
+      <h3>Software Engineer, Machine Learning &mdash; Noblis</h3>
+      <p><i>Jan 2021 &ndash; Dec 2023</i></p>
+      <p>Tech-lead for an R&amp;D project providing computer-vision capabilities to aid child exploitation investigations.</p>
+      <p>Engineered a secure and scalable Spring Boot web application which brings to production a variety of speech technology and machine learning capabilities.</p>
+      <p>Led a research initiative focused on developing a Data Lakehouse solution for Noblis, including management of data infrastructure, ETL pipelines, and the deployment of a large language model internally.</p>
+      <p>Engaged directly with stakeholders and led the development of a microservice web application.</p>
+
+      <hr>
+
+      <h3>Graduate Research Assistant &mdash; USF Medical Engineering</h3>
+      <p><i>Jun 2019 &ndash; Dec 2020</i></p>
+      <p>Performed image segmentation and analysis on biological datasets leading to new principles of neural circuitry.</p>
+      <p>Directed multiple undergraduate researchers. Assisted in course delivery and lecturing.</p>
+
+      <hr>
+
+      <h3>Undergraduate Research Assistant &mdash; WVU Rockefeller Neuroscience Institute</h3>
+      <p><i>Jun 2019 &ndash; Dec 2020</i></p>
+      <p>Analyzed biological image datasets and discovered novel properties of neuronal interactions.</p>
+      <p>Developed Python scripts to automate data collection.</p>
+
+      <hr>
+
+      <h2>Education</h2>
+
+      <h3>Johns Hopkins Whiting School of Engineering</h3>
+      <p><i>2024 &ndash; Current</i></p>
+      <p>Graduate Certificate in Applied and Computational Mathematics</p>
+
+      <hr>
+
+      <h3>University of South Florida</h3>
+      <p><i>2019 &ndash; 2020</i></p>
+      <p>Master of Science in Biomedical Engineering</p>
+
+      <hr>
+
+      <h3>West Virginia University</h3>
+      <p><i>2015 &ndash; 2019</i></p>
+      <p>B.S. in Biology (Neuroscience emphasis)</p>
+
+    </div>
+
   </div>
 </div>
 
-<!-- ========================= -->
-<!--          FOOTER          -->
-<!-- ========================= -->
-<footer class="footer">
+<footer>
   <p>Other places you can find me on the web</p>
-  <a href="https://github.com/matthew-kersting">GitHub</a> |
+  <a href="https://github.com/matthew-kersting">GitHub</a> &nbsp;|&nbsp;
   <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
 </footer>
 
