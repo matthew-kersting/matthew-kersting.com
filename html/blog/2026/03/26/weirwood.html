@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>weirwood - Blog Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../../css/style.css">
+</head>
+<body>
+
+<!-- ========================= -->
+<!--   TOP TERMINAL NAV BAR   -->
+<!-- ========================= -->
+<div class="terminal-nav">
+  <div class="nav-buttons">
+    <span class="btn red"></span>
+    <span class="btn yellow"></span>
+    <span class="btn green"></span>
+  </div>
+
+  <div class="nav-links">
+    <a href="../../../../../index.html">HOME</a>
+    <span class="divider">|</span>
+    <a href="../../../../../html/research.html">RESEARCH</a>
+    <span class="divider">|</span>
+    <a href="../../../../../html/blog/blog.html">BLOG</a>
+    <span class="divider">|</span>
+    <a href="../../../../../pdfs/matthew-kersting-resume.pdf">RESUME</a>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!--     TERMINAL WINDOW      -->
+<!-- ========================= -->
+<div class="terminal-window">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="title">~/blog/weirwood</span>
+  </div>
+
+  <div class="terminal-content">
+    <div class="section">
+
+      <p>
+        GitHub: <a href="https://github.com/matthew-kersting/weirwood">github.com/matthew-kersting/weirwood</a>
+        &nbsp;|&nbsp;
+        Crate: <a href="https://crates.io/crates/weirwood">crates.io/crates/weirwood</a>
+      </p>
+
+      <h2 id="introduction">Introducing weirwood</h2>
+
+      <p>
+        <a href="https://github.com/matthew-kersting/weirwood">weirwood</a> is a Rust crate for running XGBoost
+        inference directly on encrypted data using Fully Homomorphic Encryption (FHE). The core idea is simple:
+        the client encrypts its feature vector before sending it to the server. The server evaluates the entire
+        XGBoost ensemble on the ciphertext and returns an encrypted result. The client decrypts locally. The
+        server computes the prediction without ever seeing the input data.
+      </p>
+
+      <h2 id="naming">The Name</h2>
+
+      <p>
+        In <em>A Song of Ice and Fire</em>, weirwood trees are an ancient species with white bark and blood-red
+        leaves, found across the continent of Westeros. They are revered by the followers of the Old Gods, the
+        religion of the First Men who inhabited the continent long before the Andals arrived. Nearly every
+        weirwood has a face carved into its trunk, and those faces are said to watch.
+      </p>
+
+      <p>
+        The trees are not just symbolic. Greenseers, including Bran Stark, can perceive the world through the
+        carved faces of weirwoods across the entire continent. The trees are connected to each other through
+        what fans sometimes call the weirwood.net: a vast, ancient network rooted deep in the earth, through
+        which a sufficiently powerful greenseer can observe events happening at any node in the network, past
+        or present. The knowledge flows through the roots. Nothing that passes before a weirwood is forgotten.
+      </p>
+
+      <p>
+        An ensemble of boosted trees felt like a reasonable fit. The faces watch everything but the server
+        reveals nothing about what it has seen, which felt like the right metaphor for a privacy-preserving
+        system. The crate name was also available on
+        <a href="https://crates.io/crates/weirwood">crates.io</a>, which settled it.
+      </p>
+
+      <h2 id="the-problem">The Problem</h2>
+
+      <p>
+        Gradient boosted tree models are widely deployed for prediction tasks in sensitive domains: fraud
+        detection, malware classification, medical risk scoring. The standard deployment patterns each come
+        with an uncomfortable tradeoff:
+      </p>
+
+      <pre>
+1. Send plaintext features to the server: the server sees your data.
+2. Ship the model to the client: you expose your model (and the client
+   needs the compute to run it).
+      </pre>
+
+      <p>
+        FHE eliminates this tradeoff. The client keeps its data private; the server keeps its model private.
+        Neither party has to trust the other. The obvious catch is that FHE is expensive, but that cost is
+        improving quickly and the use cases where the tradeoff is worth it are real.
+      </p>
+
+      <h2 id="how-it-works">How It Works</h2>
+
+      <h3>XGBoost inference as an FHE circuit</h3>
+      <p>
+        XGBoost builds an ensemble of <em>K</em> regression trees. At inference time, each tree routes the input
+        from root to leaf by evaluating splits of the form <code>feature[i] &lt;= threshold</code>. The final
+        prediction is the sum of leaf values across all trees, optionally passed through an activation function
+        (sigmoid for binary classification, identity for regression).
+      </p>
+
+      <p>
+        Under FHE, the split comparisons are the hard part. weirwood uses TFHE for tree evaluation:
+      </p>
+
+      <pre>
+TFHE  - for tree split comparisons (feature[i] <= threshold).
+        TFHE supports programmable bootstrapping: the noise-reset step
+        that normally just refreshes a ciphertext can simultaneously
+        evaluate an arbitrary lookup table. Each comparison is encoded as
+        a Heaviside step function directly into the bootstrapping key.
+        The result is exact (no approximation) at the cost of roughly
+        one bootstrapping call per node (~10-20 ms on CPU).
+      </pre>
+
+      <h3>Activation functions: an open design question</h3>
+      <p>
+        After all tree scores are summed, classification objectives need an activation applied (sigmoid for
+        binary, softmax for multi-class). There are two reasonable approaches and I have not fully committed
+        to one yet:
+      </p>
+
+      <pre>
+Option A - Client-side activation:
+  The server returns the encrypted raw score. The client decrypts it
+  and applies sigmoid or softmax locally. This keeps the implementation
+  simple (single FHE scheme, no extra round-trip complexity) but means
+  the client receives a pre-activation score rather than a final
+  probability. For most use cases this is fine.
+
+Option B - CKKS on the server:
+  CKKS is an FHE scheme designed for approximate real arithmetic. It
+  supports polynomial approximations of functions like sigmoid over
+  encrypted values, so the activation could be evaluated server-side
+  before returning the result. This gives the client a final probability
+  without ever decrypting an intermediate value, but adds a second
+  encryption scheme and the approximation error needs careful handling.
+      </pre>
+
+      <p>
+        The current implementation uses Option A. Option B is appealing for the end-to-end privacy story
+        but the added complexity of a dual-scheme pipeline needs to be justified by a concrete use case
+        where the client receiving a raw score is not acceptable.
+      </p>
+
+      <h3>The two-party protocol</h3>
+      <p>
+        The library models the protocol through distinct types so the type system enforces the trust boundary:
+      </p>
+
+      <pre>
+ClientContext  - holds both keys. Used for key generation, encryption,
+                 and decryption. Never leaves the client.
+
+ServerContext  - holds only the server evaluation key. Contains no
+                 private key material. Handed to the inference server.
+
+FheEvaluator  - takes a ServerContext. The type system prevents it from
+                holding or using a private key.
+      </pre>
+
+      <h2 id="benchmarks">Benchmarks</h2>
+
+      <p>
+        Plaintext throughput measured on a 100-tree depth-3 model, 100,000 iterations.
+        The Rust plaintext evaluator is about 11,700x faster than Python/XGBoost, mostly
+        a reflection of JIT overhead and Python calling conventions rather than anything
+        novel in the implementation.
+      </p>
+
+      <pre>
+Backend                      Per call      Throughput
+------------------------------------------------------
+weirwood (Rust, plaintext)    7.9 ns       125,823,673 inf/s
+XGBoost (Python)          93,183 ns            10,732 inf/s
+      </pre>
+
+      <p>
+        FHE is a different story. Benchmarked on the simplest possible model: a single decision stump
+        (depth 1, 1 tree, 1 feature):
+      </p>
+
+      <pre>
+Backend                       Per call
+-----------------------------------------------
+weirwood (Rust, plaintext)      3.3 ns
+XGBoost (Python, plaintext)  61,879 ns
+weirwood (Rust, FHE)            520 ms   &lt;-- one bootstrapping operation
+
+FHE phase breakdown:
+  Key generation  958 ms  (one-time client cost)
+  Encryption      0.81 ms
+  Inference       520 ms  (avg 5 runs)
+  Decryption      0.03 ms
+  |delta plaintext| = 0.0000
+      </pre>
+
+      <p>
+        A typical XGBoost model with 100 trees at depth 5 requires roughly 31,000 bootstrapping operations.
+        At ~15 ms per comparison on CPU, that puts single-threaded inference around 7-8 minutes. The primary
+        optimization target for v0.3 is GPU acceleration via <code>tfhe-rs</code>'s CUDA backend, which
+        targets ~1 ms per bootstrapping operation, bringing the same model down to about 30 seconds.
+      </p>
+
+      <h2 id="current-status">Current Status</h2>
+
+      <pre>
+Objective            Plaintext    FHE
+----------------------------------------------
+reg:squarederror     Yes          Yes
+binary:logistic      Yes          Partial (raw score; sigmoid post-decrypt)
+multi:softmax        Partial      Planned
+
+Model formats: XGBoost JSON (.json) and Universal Binary JSON (.ubj)
+      </pre>
+
+      <p>
+        The project is currently in active development as part of my coursework at Johns Hopkins. Phase 1
+        (model loading and plaintext inference) and Phase 2 (FHE circuit evaluation) are working. Phase 3
+        (wire types for encrypted inference requests over gRPC/REST) is planned.
+      </p>
+
+      <h2 id="thoughts">Thoughts</h2>
+
+      <h3>Why FHE, and why now?</h3>
+      <p>
+        FHE has been theoretically possible since Gentry's 2009 construction, but it was so slow it was mostly
+        a curiosity. The gap between theory and practical deployment has been closing fast. TFHE's programmable
+        bootstrapping was a meaningful step forward: it turned bootstrapping from a pure overhead cost into
+        something that could do useful work at the same time. Libraries like <code>tfhe-rs</code> have made
+        it accessible without a PhD in lattice cryptography.
+      </p>
+
+      <p>
+        There is also the quantum angle. FHE is built on Ring Learning With Errors (RLWE), which is widely
+        believed to be hard for quantum computers. The schemes used in weirwood are not just privacy-preserving;
+        they are post-quantum secure by construction, which is more than can be said for the elliptic curve
+        cryptography underlying most of today's transport layer.
+      </p>
+
+      <h3>Why XGBoost specifically?</h3>
+      <p>
+        Neural networks are the obvious target for FHE because of how much attention they get, but they are
+        actually a difficult fit. Neural networks are full of multiplications, and multiplications are expensive
+        in FHE; noise accumulates fast and bootstrapping resets cost you compute. XGBoost inference is
+        fundamentally a sequence of comparisons and additions, which maps much more naturally onto TFHE's
+        programmable bootstrapping. You pay one bootstrapping call per tree node rather than per neuron
+        activation, and comparisons are exact rather than approximated.
+      </p>
+      <p>
+        XGBoost also remains the workhorse of production ML on tabular data. It consistently outperforms
+        deep learning on structured datasets, is fast to train, and is deployed everywhere from credit
+        scoring to malware detection, exactly the kinds of domains where you would most want to keep
+        features private.
+      </p>
+
+      <h3>What I want to build toward</h3>
+      <p>
+        The end goal is a system where you can point weirwood at a trained XGBoost model and get a
+        privacy-preserving inference endpoint: the client sends ciphertext, the server returns ciphertext,
+        and the model owner and the data owner never have to trust each other. Phase 3 covers the transport
+        layer for this.
+      </p>
+      <p>
+        The bigger open question is latency at realistic model sizes. GPU acceleration should close most
+        of the gap for single queries. Batching encrypted queries is another direction: if throughput
+        matters more than per-query latency, packing multiple inference requests into CKKS slots starts
+        to look attractive. That is further out, but it is where I think the interesting engineering lives.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Other places you can find me on the web</p>
+  <a href="https://github.com/matthew-kersting">GitHub</a> |
+  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
+</footer>
+
+</body>
+</html>
