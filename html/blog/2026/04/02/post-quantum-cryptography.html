@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Quiet Crisis in Cryptography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../../../css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="site-title" href="../../../../../index.html">Matthew Kersting</a>
+  <div class="nav-links">
+    <a href="../../../../../index.html">Home</a>
+    <a href="../../../../../html/research.html">Research</a>
+    <a href="../../../../../html/blog/blog.html">Blog</a>
+    <a href="../../../../../pdfs/matthew-kersting-resume.pdf">Resume</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h2 id="citation">Citation</h2>
+  <p>
+    Ryan Babbush, Adam Zalcman, Craig Gidney, Michael Broughton, Tanuj Khattar, Hartmut Neven,
+    Thiago Bergamaschi, Justin Drake, and Dan Boneh. "Securing Elliptic Curve Cryptocurrencies
+    against Quantum Vulnerabilities: Resource Estimates and Mitigations." April 1, 2026.
+    <a href="https://arxiv.org/abs/2603.28846">https://arxiv.org/abs/2603.28846</a>
+  </p>
+
+  <hr>
+
+  <h2 id="background">Background</h2>
+
+  <h3>What is actually at risk</h3>
+  <p>
+    Most of the cryptography securing digital communications today falls into two families: RSA and
+    elliptic curve cryptography (ECC). RSA is built on the hardness of factoring large integers. ECC
+    is built on the hardness of the elliptic curve discrete logarithm problem (ECDLP). Both are used
+    everywhere. I mean everywhere:
+  </p>
+
+  <pre>
+TLS / HTTPS     - the padlock on every website. RSA or ECDH for key exchange,
+                  ECDSA for authentication. Every browser, every API call.
+SSH             - server authentication and session key establishment.
+PGP / GPG       - email encryption and code signing.
+Signal / iMessage / WhatsApp - end-to-end encryption via ECDH key agreement.
+VPNs            - IPsec and WireGuard both rely on Diffie-Hellman variants.
+JWT / OAuth     - RS256 and ES256 are RSA and ECDSA respectively.
+Blockchain      - Bitcoin and Ethereum use secp256k1 ECDSA for transaction signing.
+  </pre>
+
+  <p>
+    Symmetric cryptography (AES, ChaCha20) is not the problem here. That is the encryption that
+    actually protects data in flight. The asymmetric layer sitting underneath it, which handles
+    key exchange and authentication, is where the exposure lives.
+  </p>
+
+  <h3>Which attacks break them</h3>
+  <p>
+    <strong>Shor's algorithm</strong> is the main threat. Published in 1994, it runs on a quantum
+    computer and solves both integer factorization and the discrete logarithm problem in polynomial
+    time. That directly breaks RSA and ECC. A classical computer would need longer than the age of
+    the universe to break a 256-bit elliptic curve key. A sufficiently large quantum computer running
+    Shor's algorithm can do it in minutes.
+  </p>
+  <p>
+    <strong>Grover's algorithm</strong> is the secondary concern. It provides a quadratic speedup for
+    brute-force search, which effectively halves the security of symmetric keys. AES-128 drops to
+    roughly 64-bit effective security against a quantum adversary. AES-256 is still fine at 128-bit
+    effective security. Symmetric crypto just needs larger key sizes. Asymmetric crypto needs to be
+    replaced entirely.
+  </p>
+
+  <h2 id="paper">What the Google paper says</h2>
+  <p>
+    A paper out of Google Quantum AI, released April 1, 2026, gives updated resource estimates for
+    breaking the 256-bit ECDLP over secp256k1, the specific curve used by Bitcoin and Ethereum. The
+    numbers are more concrete and more troubling than previous estimates:
+  </p>
+
+  <pre>
+&le; 1200 logical qubits and &le; 90 million Toffoli gates, or
+&le; 1450 logical qubits and &le; 70 million Toffoli gates.
+
+On superconducting hardware with 10^-3 physical error rates and
+planar connectivity: execution in minutes, using fewer than
+500,000 physical qubits.
+  </pre>
+
+  <p>
+    500,000 physical qubits is not a science fiction number anymore. Google's Willow chip hit 105
+    qubits in 2024. The trajectory matters more than the current count, and the resource requirements
+    are shrinking faster than most organizations are moving.
+  </p>
+  <p>
+    The paper also draws a useful distinction between "fast-clock" architectures (superconducting,
+    photonic) and "slow-clock" architectures (neutral atom, ion trap). The first fast-clock
+    cryptographically relevant quantum computer would be capable of "on-spend" attacks: intercepting
+    a public transaction in the mempool and cracking the key fast enough to redirect funds before the
+    transaction confirms. That is not a distant theoretical scenario. It is a specific attack with a
+    specific time window.
+  </p>
+
+  <h2 id="harvest">The problem that is already happening</h2>
+  <p>
+    Even before a cryptographically relevant quantum computer exists, there is a concrete attack
+    already in progress: <strong>collect now, decrypt later</strong> (also called harvest now,
+    decrypt later, or HNDL). The strategy is simple. Record encrypted traffic today. Store it.
+    Decrypt it when the hardware catches up. Anyone with the storage budget and the motive has
+    already started.
+  </p>
+  <p>
+    The implications are not hypothetical. Any data transmitted today that needs to stay confidential
+    for more than a decade is already potentially compromised. Medical records. Legal communications.
+    Government intelligence. Financial transactions. Source code. The encryption protecting that data
+    was designed to be hard to break with classical hardware, and that assumption is on a known
+    countdown.
+  </p>
+  <p>
+    Forward secrecy helps somewhat. TLS with ephemeral Diffie-Hellman means past sessions cannot be
+    decrypted even if the long-term key is later broken. But it only covers the session key, not the
+    authentication step. And plenty of deployed software does not use forward secrecy at all.
+  </p>
+
+  <h2 id="adoption">Why PQC adoption is not keeping up</h2>
+  <p>
+    NIST finalized its first post-quantum cryptography standards in 2024: ML-KEM (CRYSTALS-Kyber) for
+    key encapsulation and ML-DSA (CRYSTALS-Dilithium) for digital signatures. Both are lattice-based
+    schemes believed to be hard for classical and quantum computers alike. The standards exist. The
+    libraries exist. The path forward is clear.
+  </p>
+  <p>
+    Adoption is slow anyway. TLS libraries are being updated, but rolling that out across enterprise
+    infrastructure, embedded systems, long-lived hardware, and legacy software takes years. The
+    blockchain situation is particularly rough: migrating a signature scheme on a live decentralized
+    network requires broad consensus under adversarial conditions, and dormant wallets with old keys
+    may never get migrated at all.
+  </p>
+  <p>
+    The gap between "the standard exists" and "the standard is deployed everywhere it needs to be"
+    is measured in years. The timeline for a quantum computer capable of breaking 256-bit ECC is
+    uncertain, but this paper shows the resource requirements are no longer implausible at current
+    scaling rates. The urgency is not matched by the pace of migration.
+  </p>
+
+  <hr>
+
+  <h2 id="thoughts">Thoughts</h2>
+
+  <h3>What you can actually do</h3>
+  <p>
+    The good news is that the practical steps are well understood. The bad news is that most people
+    have not done them. Here is where I would start depending on your situation:
+  </p>
+
+  <pre>
+If you write or maintain software:
+  - Audit your TLS configuration. Make sure you are using ephemeral key
+    exchange (ECDHE or DHE). Forward secrecy does not help against HNDL
+    entirely, but it limits the blast radius.
+  - Swap AES-128 for AES-256 wherever you control the symmetric layer.
+    Grover's cuts effective key size in half. AES-256 survives that;
+    AES-128 does not comfortably.
+  - Start testing ML-KEM and ML-DSA in non-production environments. Both
+    are in OpenSSL 3.5 and liboqs. The migration will take time, so
+    starting now while there is no pressure is the right call.
+  - Avoid generating new long-lived RSA or ECC keys for things that need
+    to stay secret for more than a few years.
+
+If you work at an organization handling sensitive data:
+  - Do a cryptographic inventory. You probably do not have a clear picture
+    of everywhere RSA and ECC are deployed. You need one before you can
+    migrate anything.
+  - Prioritize data with long sensitivity shelf life: medical records,
+    legal documents, anything classified. That is what is most at risk
+    from HNDL today.
+  - Start migration planning. Enterprise rollouts take years. You want to
+    have a plan before the urgency is obvious to everyone else.
+
+If you work in crypto / blockchain:
+  - Push for PQC migration discussions in your community. This is harder
+    than anywhere else because it requires network-wide coordination, which
+    means starting the conversation early is the only realistic path.
+
+For regular people:
+  - Signal added post-quantum key agreement (PQXDH) in 2023. Use it.
+  - Keep your software updated. PQC support is being rolled out across
+    TLS libraries and browsers. Staying current is the easiest way to
+    benefit from that work.
+  </pre>
+
+  <h3>The discontinuity nobody is taking seriously</h3>
+  <p>
+    The Google paper uses the word "discontinuity" to describe what a cryptographically relevant
+    quantum computer represents, and I think that framing is exactly right. Most security improvements
+    are incremental. Patch a vulnerability, update a library, rotate a key. A CRQC is not incremental.
+    It is a retroactive break of most of the trust infrastructure the internet has been built on for
+    thirty years, applied simultaneously to everything ever encrypted with RSA or ECC.
+  </p>
+  <p>
+    Collect now, decrypt later makes it worse because the attack surface is not just future
+    communications. It includes everything ever transmitted. We do not get to decide the threat
+    exists only after the hardware arrives. Adversaries with the resources and the motive to store
+    traffic at scale have been doing that for a long time. The data is sitting there waiting for
+    the key to exist.
+  </p>
+  <p>
+    The pushback I keep hearing is "quantum computers aren't there yet." Sure, that is true. It is
+    also completely beside the point. The question is not whether your data is being decrypted today.
+    The question is whether data you transmit over the next five to ten years could be decrypted later.
+    For most organizations handling sensitive information, the answer is yes, and the window to act
+    before exposure is roughly the same timescale as the expected arrival of a CRQC.
+  </p>
+  <p>
+    The path forward is not complicated. NIST gave us the standards. Migrate to ML-KEM and ML-DSA.
+    Prioritize forward secrecy everywhere. Audit what you are transmitting that has long-term
+    sensitivity. The hard part is not technical. It is getting people to treat a threat that has not
+    visibly materialized yet with the seriousness it deserves. We are probably going to wait until
+    something breaks before we take this seriously enough, which is a shame.
+  </p>
+
+</div>
+
+<footer>
+  <p>Other places you can find me on the web</p>
+  <a href="https://github.com/matthew-kersting">GitHub</a> &nbsp;|&nbsp;
+  <a href="https://www.linkedin.com/in/matthew-kersting-066289109/">LinkedIn</a>
+</footer>
+
+</body>
+</html>
