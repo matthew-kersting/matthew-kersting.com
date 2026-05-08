@@ -1,0 +1,115 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[top=0.55in, bottom=0.55in, left=0.75in, right=0.75in]{geometry}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\setmainfont{Carlito}
+
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% Tighter bullet lists: no extra space above/below, small item sep
+\setlist[itemize]{leftmargin=1.5em, itemsep=1pt, topsep=1pt, parsep=0pt, partopsep=0pt}
+
+\pagestyle{empty}
+
+% Company block: bold company + right-aligned date, then role title directly beneath
+\newcommand{\company}[2]{\textbf{#1} \hfill #2 \\[-1pt]}
+\newcommand{\role}[1]{\textit{#1}}
+\newcommand{\rolespan}[2]{\textit{#1} \hfill \textit{#2}}
+
+\begin{document}
+
+% ── Header ──────────────────────────────────────────────────────────────────
+{\LARGE\textbf{Matthew Kersting}} \\[1pt]
+\textbf{Machine Learning Engineer} \\[4pt]
+Homepage: \href{https://matthew-kersting.com}{matthew-kersting.com} \quad|\quad
+Email: \href{mailto:matthew.kersting@pm.me}{matthew.kersting@pm.me} \quad|\quad
+\href{https://github.com/matthew-kersting}{Github} \quad|\quad
+\href{https://www.linkedin.com/in/matthew-kersting-066289109/}{Linkedin}
+
+% ── Experience ──────────────────────────────────────────────────────────────
+\section*{EXPERIENCE}
+
+\company{CrowdStrike --- Remote}{Apr 2025 -- Present}
+\role{Machine Learning Engineer III}
+\begin{itemize}
+    \item Develop and support distributed compute pipelines using Ray, AWS, and Apache Spark, optimizing reliability, resource utilization, and end-to-end throughput.
+    \item Build and maintain large-scale ML training platforms used by data scientists across the organization, enabling distributed experimentation and rapid model iteration.
+    \item Contribute to ongoing modernization of ML tooling by standardizing deployments, improving CI/CD integration, and automating provisioning across training infrastructure.
+\end{itemize}
+
+\vspace{5pt}
+\company{Booz Allen Hamilton --- Arlington, VA (Hybrid)}{Jan 2024 -- Apr 2025}
+\rolespan{Lead Data Engineer}{Jan 2025 -- Apr 2025}
+\begin{itemize}
+    \item Led a team of data engineers maintaining and optimizing data infrastructure for an application with over 20,000 monthly active users. Oversaw document collection, metadata extraction, and search index population using Kubernetes and Databricks-based ETL pipelines.
+\end{itemize}
+\vspace{1pt}
+\rolespan{Staff Machine Learning Engineer}{Jan 2024 -- Jan 2025}
+\begin{itemize}
+    \item Developed a full-stack document management solution deployed via Kubernetes, including backend/frontend development, web server optimization, testing enhancements, and database architecture.
+    \item Served as a Data Engineer for a leading Enterprise data platform, leveraging web scraping tools to gather documents, extract metadata, and organize data within Amazon Web Services (AWS).
+    \item Managed AWS resources, configured servers, firewalls, logging systems, and enforced Security Technical Implementation Guidelines (STIGs) for compliance and Authority to Operate (ATO) attainment.
+\end{itemize}
+
+\vspace{5pt}
+\company{Noblis --- Reston, VA (Hybrid)}{Jan 2021 -- Dec 2023}
+\role{Software Engineer, Machine Learning}
+\begin{itemize}
+    \item Tech-lead for an R\&D project providing computer-vision capabilities to aid child exploitation investigations.
+    \item Developed a secure and scalable Spring Boot web application to productionize speech and machine learning capabilities, streamlining investigative triage.
+    \item Led a research initiative focused on developing a Data Lakehouse solution for Noblis, including management of data infrastructure, construction of ETL pipelines, and the deployment of a large language model internally.
+    \item Engaged directly with stakeholders and led full-stack microservice development encompassing system design, data modeling, ML model integration, and CI/CD.
+\end{itemize}
+
+\vspace{5pt}
+\company{Department of Medical Engineering --- University of South Florida, Tampa, FL}{Jun 2019 -- Dec 2020}
+\role{Graduate Research/Teaching Assistant}
+\begin{itemize}
+    \item Conducted image segmentation and analysis of biological datasets, leading to new principles of neural circuitry.
+    \item Assisted in course delivery, including giving lectures on machine learning in neuroscience and tutoring students.
+\end{itemize}
+
+% ── Education & Certifications ───────────────────────────────────────────────
+\section*{EDUCATION \& CERTIFICATIONS}
+
+\textbf{Graduate Certificate in Applied and Computational Mathematics, Johns Hopkins University} \hfill May 2024 -- May 2026 \\[2pt]
+\textbf{CompTIA Security+ (SY0-701) Certification} \hfill Aug 2024 -- Present \\[2pt]
+\textbf{Master of Science in Biomedical Engineering, University of South Florida, Tampa, FL} \hfill Aug 2019 -- Dec 2020 \\[2pt]
+\textbf{Bachelor of Science in Biology (Neuroscience emphasis), West Virginia University, Morgantown, WV} \hfill Aug 2015 -- May 2019
+
+% ── Skills ───────────────────────────────────────────────────────────────────
+\section*{SKILLS}
+
+\textbf{Functional Skills}: Machine Learning, Computer Vision, Full-stack Development, Web Scraping, Data Engineering, ETL, Data Science, Research, Distributed Systems, Database Design, Microservices, REST APIs, Speech Technology, Software Security, AI Integration, Consulting, Mathematics, Cybersecurity \\[3pt]
+\textbf{Programming Languages}: Python, Java, Go, JavaScript, TypeScript, SQL, C++, Rust, Bash \\[3pt]
+\textbf{Applications}: Kubernetes, Docker, Docker Compose, GitHub Actions, Jenkins, PyTorch, scikit-learn, NumPy, Pandas, OpenCV, MLflow, Ray, Spark, Kafka, Hadoop, Elasticsearch, Redis, PostgreSQL, AWS, Databricks, FastAPI, Spring Boot, Express.js, React, Traefik, Scrapy, BeautifulSoup, Git
+
+% ── Publications ─────────────────────────────────────────────────────────────
+\newpage
+\section*{PUBLICATIONS}
+
+\begin{itemize}[itemsep=6pt]
+    \item Kersting, M., Patrikar, A., Schneider, E., Kusunoki-Martin, T., Drumm, A., O'Neil, C. Condition-based Maintenance using Unsupervised Time-series Anomaly Detection. \textit{Fleet Maintenance Modernization Symposium} 2023. \href{https://noblis.org/wp-content/uploads/2023/09/CBM_UTSAD_Manuscript_3.pdf}{[pdf]}
+
+    \item Spirou, G.A., Kersting, M., Carr, S., Razzaq, B., Yamamoto Alves Pinto, C., Dawson, M., Ellisman, M.H., Manis, P.B. (2023) High-Resolution Volumetric Imaging Constrains Compartmental Models to Explore Synaptic Integration and Temporal Processing by Cochlear Nucleus Globular Bushy Cells. \textit{eLife} 12:e83393. \href{https://doi.org/10.7554/eLife.83393}{doi:10.7554/eLife.83393}
+
+    \item Brandebura, A.N., Kolson, D.R., Amick, E.M., Ramadan, J., Kersting, M.C., Nichol, R.H., Holcomb, P.S., Mathers, P.H., Stoilov, P., Spirou, G.A. Transcriptional Profiling Reveals Roles of Intercellular Fgf9 Signaling in Astrocyte Maturation and Synaptic Refinement during Brainstem Development. \textit{Journal of Biological Chemistry}, 2022, 102176. \href{https://doi.org/10.1016/j.jbc.2022.102176}{doi:10.1016/j.jbc.2022.102176}
+
+    \item Kersting, M. ``Convergence of Auditory Nerve Fibers onto Globular Bushy Cells'' (2020). USF Tampa Graduate Theses and Dissertations. \href{https://digitalcommons.usf.edu/etd/9543}{[link]}
+
+    \item Spirou, G.A., Kersting, M., Ellisman, M., Manis, P.B. Convergence of Auditory Nerve Fibers onto Globular Bushy Cells. \textit{Society for Neuroscience Abstract}, October 2019.
+
+    \item Spirou, G.A., Kersting, M., Bayliss, T., Razzaq, B., Holcomb, P., Morehead, M., Spencer, N., Ellisman, M., Manis, P.B. New Principles for Cell and Circuit Function Revealed by Volume Nanoscale Imaging. \textit{Experimental Biology (FASEB)} V33, No.\ 1 (supplement), April 2019.
+\end{itemize}
+
+\end{document}
